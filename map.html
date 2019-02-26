@@ -36,6 +36,7 @@
 <html>
   <head>
   <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <link rel="stylesheet" href="assets/css/style.css">
   <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
   type="text/javascript" charset="utf-8"></script>
   <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
@@ -43,6 +44,10 @@
   </head>
   <body>
   <div style="width: 640px; height: 480px" id="mapContainer"></div>
+      <div class="map-text-box">
+                <a class="btn btn-full" href="#" id="get-location-btn">Get Location </a>
+                <a class="btn btn-ghost"  href="#" id="carkpark-info">Carpark Info</a>
+            </div>
   <script>
     // Initialize the platform object:
     var platform = new H.service.Platform({
