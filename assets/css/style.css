@@ -237,6 +237,23 @@ p {
 /*------------------------------------------------------------------
 [ Login Form ]*/
 
+.logo {
+    display: block;
+    height: 50px;
+    width: auto;
+    float: center;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+.app-logo {
+    display: block;
+    height: 140px;
+    width: auto;
+    float: center;
+    margin: 0 auto;margin-top: auto;
+    margin-bottom: 10px;
+
+}
 .login100-form {
   width: 100%;
 }
@@ -251,9 +268,11 @@ p {
     padding-top: 20px;
     padding-bottom: 10px;
 }
+
 .login100-form-title i {
   font-size: 60px;
 }
+
 
 .limiter {
   max-width: 38em;
