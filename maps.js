@@ -23,23 +23,23 @@ var platform = new H.service.Platform({
 
     // Add the marker to the map:
     map.addObject(marker);
-    //reading xml file
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            myFunction(this);
+//reading xml file
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myFunction(this);
         }
     };
     xhttp.open("GET", "https://route.api.here.com/routing/7.2/calculateroute.xml?app_id=EaMacGi1Wj3dRmQlGXCu&app_code=YXiH50dmZNPxmzS0ldy6Sw&waypoint0=geo!6.795043,79.900576&waypoint1=geo!6.911750,79.851406&mode=fastest;car;traffic:disabled", true);
     xhttp.send();
-    
-    function myFunction(xml) {
-        var xmlDoc = xml.responseXML;
-        var x = xmlDoc.getElementsByTagName('Distance')[0];
-        console.log(x)
-        var y = x.childNodes[0];
-        document.getElementById("demo").innerHTML = y.nodeValue; 
-    }
+//get distance from xml file    
+function myFunction(xml) {
+    var xmlDoc = xml.responseXML;
+    var x = xmlDoc.getElementsByTagName('Distance')[0];
+    console.log(x)
+    var y = x.childNodes[0];
+    document.getElementById("demo").innerHTML = y.nodeValue; 
+}
 //function getRoute(){
    // https://route.api.here.com/routing/7.2/calculateroute.xml?app_id=EaMacGi1Wj3dRmQlGXCu&app_code=YXiH50dmZNPxmzS0ldy6Sw&waypoint0=geo!6.795043,79.900576&waypoint1=geo!6.911750,79.851406&mode=fastest;car;traffic:disabled
 //}
