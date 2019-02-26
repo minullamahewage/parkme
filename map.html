@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title></title>
-    <meta charset="utf-8" />
-
-    <!-- Reference to the Bing Maps SDK -->
-    <script type='text/javascript'
-            src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=Aslc0kHh6hLEJMGSp-W76-PQWQ4jKq25ySGiKQ7KjTLxKrPy91UH8R2KXYEzPZGE' 
-            async defer>
-    </script>
-
-    <script type='text/javascript'>
-    function GetMap()
-    {
-        var map = new Microsoft.Maps.Map('#myMap',{
-        credentials: Aslc0kHh6hLEJMGSp-W76-PQWQ4jKq25ySGiKQ7KjTLxKrPy91UH8R2KXYEzPZGE ,
-        center: new Microsoft.Maps.Location(51.50632, -0.12714),
-        mapTypeId: Microsoft.Maps.MapTypeId.aerial,
-        zoom: 10
-        });
-
-        //Add your post map load code here.
-    }
-    </script>
-</head>
-<body onload="GetMap();">
-    <div id="myMap" style="position:relative;width:600px;height:400px;"></div>
-</body>
+    <head>
+        <title>loadmapwithoptionsHTML</title>
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+        <style type='text/css'>body{margin:0;padding:0;overflow:hidden;font-family:'Segoe UI',Helvetica,Arial,Sans-Serif}</style>
+    </head>
+    <body>
+        <div id='printoutPanel'><Print/div>
+        
+        <div id='myMap' style='width: 500px; height:500px;'>Map</div>
+        <script type='text/javascript'>
+            function loadMapScenario() {
+                var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+                    /* No need to set credentials if already passed in URL */
+                    center: new Microsoft.Maps.Location(51.50632, -0.12714),
+                    mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+                    zoom: 10 });
+                    /*Microsoft.Maps.loadModule('Microsoft.Maps.Directions', function () {
+                    var directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map);
+                    // Set Route Mode to driving
+                    directionsManager.setRequestOptions({ routeMode: Microsoft.Maps.Directions.RouteMode.driving });
+                    var waypoint1 = new Microsoft.Maps.Directions.Waypoint({ address: 'Redmond', location: new Microsoft.Maps.Location(47.67683029174805, -122.1099624633789) });
+                    var waypoint2 = new Microsoft.Maps.Directions.Waypoint({ address: 'Seattle', location: new Microsoft.Maps.Location(47.59977722167969, -122.33458709716797) });
+                    directionsManager.addWaypoint(waypoint1);
+                    directionsManager.addWaypoint(waypoint2);
+                    // Set the element in which the itinerary will be rendered
+                    directionsManager.setRenderOptions({ itineraryContainer: document.getElementById('printoutPanel') });
+                    directionsManager.calculateDirections();
+                });*/
+            }
+        </script>
+        <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=Aslc0kHh6hLEJMGSp-W76-PQWQ4jKq25ySGiKQ7KjTLxKrPy91UH8R2KXYEzPZGE&callback=loadMapScenario' async defer></script>
+    </body>
 </html>
