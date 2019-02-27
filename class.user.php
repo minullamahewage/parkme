@@ -17,7 +17,7 @@ include "db_config.php";
 		/*** for registration process ***/
 		public function reg_user($ufname,$uemail,$upass,$udob,$ugender){
 
-			$pass = md5($pass);
+			$upass = md5($upass);
 			$sql="SELECT * FROM users WHERE ufname='$ufname' OR uemail='$uemail'";
 
 			//checking if the username or email is available in db
@@ -35,8 +35,10 @@ include "db_config.php";
 
 		/*** for login process ***/
 		public function check_login($uemail, $upass){
-
+			//echo $upass;
+			//echo $uemail;
         	$upass = md5($upass);
+			
 			$sql2="SELECT uemail from users WHERE uemail='$uemail' and upass='$upass'";
 
 			//checking if the username is available in the table

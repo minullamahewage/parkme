@@ -87,17 +87,17 @@ input[type="button"]:focus{
   color: #fff;
   border-color:  #d35400;
 }
-#btn_login:hover{
+#btn_submit:hover{
   background-color:  #d35400;
   color: #fff;
   border-color:  #d35400;
 }
-#btn_login:active{
+#btn_submit:active{
   background-color:  #d35400;
   color: #fff;
   border-color:  #d35400;
 }
-#btn_login:focus{
+#btn_submit:focus{
   background-color:  #d35400;
   color: #fff;
   border-color:  #d35400;
@@ -247,6 +247,21 @@ select option {
 p {
 	text-align: right;
 	font-size: 10px;
+}
+#date{
+	width: auto;
+}
+.field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: -30px;
+  position: relative;
+  z-index: 2;
+}
+
+.container{
+  padding-top:50px;
+  margin: auto;
 }
 /*--------------------------------------------------------------*/
 /*------------------------------------------------------------------
