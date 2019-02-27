@@ -87,6 +87,21 @@ input[type="button"]:focus{
   color: #fff;
   border-color:  #d35400;
 }
+#btn_login:hover{
+  background-color:  #d35400;
+  color: #fff;
+  border-color:  #d35400;
+}
+#btn_login:active{
+  background-color:  #d35400;
+  color: #fff;
+  border-color:  #d35400;
+}
+#btn_login:focus{
+  background-color:  #d35400;
+  color: #fff;
+  border-color:  #d35400;
+}
 input[type="checkbox"] {
   display: none;
 }
