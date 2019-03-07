@@ -59,7 +59,7 @@ include "db_config.php";
 
     	/*** for showing the username or fullname ***/
     	public function get_fullname($uemail){
-    		$sql3="SELECT ufname FROM users WHERE uemail = $email";
+    		$sql3="SELECT ufname FROM users WHERE uemail = '$uemail'";
 	        $result = mysqli_query($this->db,$sql3);
 	        $user_data = mysqli_fetch_array($result);
 	        echo $user_data['ufname'];

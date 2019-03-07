@@ -17,7 +17,7 @@
 			$login = $user->check_login( $uemail, $upass );
 			if ( $login ) {
 				// Registration Success
-				header( "location:map.html" );;
+				header( "location:index.php#anchor1" );;
 			} else {
 				// Registration Failed
 				$message = "Username and/or Password incorrect.\\nTry again.";
