@@ -13,20 +13,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="icon" href="assets/img/app-icon-transparent.png">
-		<?php
-		session_start();
-require 'class.user.php';
-$user = new User(); $uid = $_SESSION['ufname'];
-//if (!$user->get_session()){
-// header("location:login.php");
-//}
 
-if (isset($_GET['q'])){
- $user->user_logout();
- header("location:login.php");
- }
-
-		?>
 	</head>
 	<body class="landing is-preload">
 
@@ -34,10 +21,9 @@ if (isset($_GET['q'])){
 			<div id="page-wrapper">
 
 				<!-- Header -->
-				<div id="container">
-<div id="header"><!--a href="home.php?q=logout">LOGOUT</a--></div>
+				
 <div id="main-body">
-<h1>Hello <?php $user->get_fullname($uid); ?></h1>
+
 </div>
 					<header id="header" class="alt">
 						<h1><a href="index.html">ParkMe</a></h1>

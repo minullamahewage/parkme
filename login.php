@@ -95,7 +95,7 @@ function showpass(obj){
 						</span>
 					
 
-						<a class="txt2" href="registration.html">
+						<a class="txt2" href="registration.php">
 							Sign Up
 						</a>
 					
