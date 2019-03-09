@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/style.css">
+	
 	<link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 	<link rel="icon" href="assets/img/app-icon-transparent.png">
 	<?php
@@ -17,7 +18,7 @@
 			$login = $user->check_login( $uemail, $upass );
 			if ( $login ) {
 				// Registration Success
-				header( "location:index.php#anchor1" );;
+				header( "location:home_afterlogin.php#one" );;
 			} else {
 				// Registration Failed
 				$message = "Username and/or Password incorrect.\\nTry again.";
@@ -25,6 +26,7 @@
 			}
 		}
 	}
+
 	?>
 
 </head>

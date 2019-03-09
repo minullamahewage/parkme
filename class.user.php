@@ -5,6 +5,8 @@ include "db_config.php";
 
 		public $db;
 
+		
+
 		public function __construct(){
 			$this->db = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
@@ -62,7 +64,7 @@ include "db_config.php";
     		$sql3="SELECT ufname FROM users WHERE uemail = '$uemail'";
 	        $result = mysqli_query($this->db,$sql3);
 	        $user_data = mysqli_fetch_array($result);
-	        echo $user_data['ufname'];
+	        return $user_data['ufname'];
     	}
 
     	/*** starting the session ***/
