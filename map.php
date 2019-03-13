@@ -10,9 +10,14 @@
   type="text/javascript" charset="utf-8"></script>
 
   <?php
-	require 'class.user.php';
-	$user = new User(); // Checking for user logged in or not
-	if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
+	require 'class.carpark.php';
+    $carpark = new CarPark(); // Checking for user logged in or not
+    $carpark->return_location(1);
+    $cplat=$carpark->cplat;
+    $cplng=$carpark->cplng;
+    echo $cplat;
+    //echo "<script type='text/javascript'>alert('$cplat');</script>";
+	/*if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
 		if ( isset( $_REQUEST[ 'submit' ] ) ) {
 			extract( $_REQUEST );
 			//echo "afsdfasgag";
@@ -29,7 +34,7 @@
 			echo 'Registration failed. Email or Username already exits please try again';
 			}
 		}
-	}
+	}*/
   ?>
   
   </head>
@@ -38,7 +43,7 @@
   <script src="map.js" type="text/javascript"></script>
       <div class="map-text-box">
                 <a class="btn btn-full" href="#" id="get-location-btn" onclick="getLocation()">Get Location </a> 
-                <a class="btn btn-ghost"  href="#" id="carkpark-info" onclick="getDistance()">Carpark Info</a>
+                <a class="btn btn-ghost"  href="#" id="carkpark-info" onclick="getDistance('<?php echo $cplat;?>','<?php echo $cplng; ?>')">Carpark Info</a>
             </div>
   
   </body>
