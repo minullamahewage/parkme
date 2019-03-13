@@ -6,7 +6,8 @@ include "db_config.php";
 		public $db;
         public $cplat;
         public $cplng;
-		
+        public $cpavslts;
+        public $cpttlslts;
 
 		public function __construct(){
 			$this->db = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
@@ -56,8 +57,8 @@ include "db_config.php";
             $this->cplat=$user_datalat['cplat'];
             $this->cplng=$user_datalng['cplng'];
 
-            echo $this->cplat;
-            echo $this->cplng;
+            //echo $this->cplat;
+            //echo $this->cplng;
             //echo "<script type='text/javascript'>alert('$this->$cplat');</script>";
             
             /*if ($count_row == 1) {

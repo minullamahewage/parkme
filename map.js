@@ -65,7 +65,12 @@ function readDistance(xml) {
     console.log(y);
     //document.getElementById("demo").innerHTML = y.nodeValue; 
 }
-
+function navigate(cplat,cplng){
+    window.open("https://wego.here.com/directions/drive/"+lat+","+lng+"/"+cplat+","+cplng+"?map="+cplat+","+cplng+",13,normal&avoid=carHOV") ;
+}
 //function getRoute(){
    // https://route.api.here.com/routing/7.2/calculateroute.xml?app_id=EaMacGi1Wj3dRmQlGXCu&app_code=YXiH50dmZNPxmzS0ldy6Sw&waypoint0=geo!6.795043,79.900576&waypoint1=geo!6.911750,79.851406&mode=fastest;car;traffic:disabled
 //}
+function updateCarParks(cparray1,cparray2,cparray3,cparray4,cparray5){
+    console.log(cparray1);
+}

@@ -11,11 +11,26 @@
 
   <?php
 	require 'class.carpark.php';
-    $carpark = new CarPark(); // Checking for user logged in or not
+    $carpark = new CarPark(); 
     $carpark->return_location(1);
     $cplat=$carpark->cplat;
     $cplng=$carpark->cplng;
     echo $cplat;
+    $cparray= array();
+    for ($i=1; $i<6; $i++){
+        ${"carpark".$i}=new CarPark();
+        ${"carpark".$i}->return_location($i);
+        echo $i;
+        $cparray[$i]= array($i,${"carpark".$i}->cplat,${"carpark".$i}->cplng);
+        
+    }
+    $js_cparray1 = json_encode($cparray[1]);
+    $js_cparray2 = json_encode($cparray[2]);
+    $js_cparray3 = json_encode($cparray[3]);
+    $js_cparray4 = json_encode($cparray[4]);
+    $js_cparray5 = json_encode($cparray[5]);
+    echo json_encode($cparray[1]);
+    echo $js_cparray1;
     //echo "<script type='text/javascript'>alert('$cplat');</script>";
 	/*if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
 		if ( isset( $_REQUEST[ 'submit' ] ) ) {
@@ -43,7 +58,8 @@
   <script src="map.js" type="text/javascript"></script>
       <div class="map-text-box">
                 <a class="btn btn-full" href="#" id="get-location-btn" onclick="getLocation()">Get Location </a> 
-                <a class="btn btn-ghost"  href="#" id="carkpark-info" onclick="getDistance('<?php echo $cplat;?>','<?php echo $cplng; ?>')">Carpark Info</a>
+                <a class="btn btn-full" href="#" id="get-location-btn" onclick="navigate(<?php echo $cplat; ?>,<?php echo $cplng; ?>)">Navigate </a>
+                <a class="btn btn-ghost"  href="#" id="carkpark-info" onclick="updateCarParks(<?php echo $js_cparray1; ?>,<?php echo $js_cparray2 ?>,<?php echo $js_cparray3 ?>,<?php echo $js_cparray4 ?>,<?php echo $js_cparray5 ?>)">Carpark Info</a>
             </div>
   
   </body>
