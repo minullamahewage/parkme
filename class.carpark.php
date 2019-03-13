@@ -54,6 +54,9 @@ include "db_config.php";
         	//$count_row = $result->num_rows;
             $cplat=$user_datalat['cplat'];
             $cplng=$user_datalng['cplng'];
+
+            echo $cplat;
+            echo $cplng;
 	        /*if ($count_row == 1) {
 	            // this login var will use for the session thing
 	            $_SESSION['login'] = true;
