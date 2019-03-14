@@ -40,7 +40,9 @@
 											<li><a href="parks.html">Parks</a></li>
 											<li><a href="registration.php">Sign Up</a></li>
 											<li><a href="login.php">Login</a></li>
+											<li><a href="reviews.php">Reviews</a></li>
 											<li><a href="about.html">About us</a></li>
+
 										</ul>
 									</div>
 								</li>

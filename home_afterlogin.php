@@ -58,10 +58,10 @@ if (isset($_GET['q'])){
 									<div id="menu">
 										<ul>
 											<li><a href="index.html">Home</a></li>
-											<li><a href="parks.html">Parks</a></li>
+											<li><a href="parks.php">Parks</a></li>
 											<!--li><a href="registration.php">Sign Up</a></li-->
 											<li><a href="home_afterlogin.php?q=logout">Logout</a></li>
-											<li><a href="about.html">Contact us</a></li>
+											<li><a href="contact-us.php">Contact us</a></li>
 										</ul>
 									</div>
 								</li>
