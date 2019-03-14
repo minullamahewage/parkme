@@ -59,6 +59,9 @@ mark {
 	background-color: transparent;
 	color: inherit;
 }
+.checked {
+	color: orange;
+  }
 
 input::-moz-focus-inner {
 	border: 0;
@@ -2533,6 +2536,7 @@ input, select, textarea {
 		width: 100%;
 	}
 
+
 		.features li {
 			padding: 4em 4em 2em 6em ;
 			display: block;
@@ -3541,6 +3545,7 @@ input, select, textarea {
 			}
 
 /* Banner */
+
 
 	#banner {
 		display: -moz-flex;

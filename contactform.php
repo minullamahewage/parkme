@@ -7,13 +7,13 @@ if(isset($_POST['submit'])){
     $subject = $_POST['subject'];
     $message = $_POST['message'];
 
-    $mailTo = "170446L@uom.lk";
+    $mailTo = "";
 
     $headers = "From: ".$mailFrom;
     $txt = "You have recieved an emil from ".$name.".\n\n".$message;
 
     mail($mailTo, $subject, $txt, $headers);
-    header("Location: contact-us.php?mailsend".$mailTo);
+    header("Location: contact-us.php?mailsentto".$mailTo);
 
 }
 

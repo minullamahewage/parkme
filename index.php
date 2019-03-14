@@ -53,6 +53,7 @@
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
+						<h1><img src="assets/img/app-icon-transparent.png" alt="login-logo" class="app-logo"><h1>
 						  <h2>Park Me</h2>
 							<p>The smart parking app<br />
 							for your need<br />
