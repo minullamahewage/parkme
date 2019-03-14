@@ -4,8 +4,10 @@ include "db_config.php";
 	class CarPark{
 
 		public $db;
-
-		
+        public $cplat;
+        public $cplng;
+        public $cpavslts;
+        public $cpttlslts;
 
 		public function __construct(){
 			$this->db = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
@@ -52,9 +54,14 @@ include "db_config.php";
             $result2 = mysqli_query($this->db,$sql2);
         	$user_datalng = mysqli_fetch_array($result2);
         	//$count_row = $result->num_rows;
-            $cplat=$user_datalat['cplat'];
-            $cplng=$user_datalng['cplng'];
-	        /*if ($count_row == 1) {
+            $this->cplat=$user_datalat['cplat'];
+            $this->cplng=$user_datalng['cplng'];
+
+            //echo $this->cplat;
+            //echo $this->cplng;
+            //echo "<script type='text/javascript'>alert('$this->$cplat');</script>";
+            
+            /*if ($count_row == 1) {
 	            // this login var will use for the session thing
 	            $_SESSION['login'] = true;
 	            $_SESSION['uemail'] = $user_data['uemail'];

@@ -108,7 +108,7 @@ if (isset($_GET['q'])){
 								<p>Location or anything by Minul and Sons</p></div>
 							<div class="iframe-container">
 							
-								<iframe src="map.html" class="iframe" scrolling="" frameborder="0" /></iframe>
+								<iframe src="map.php" class="iframe" scrolling="" frameborder="0" /></iframe>
 							</div>
 						</section>
 						<!--<section class="spotlight">
