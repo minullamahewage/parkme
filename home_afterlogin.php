@@ -172,7 +172,7 @@ if (isset($_GET['q'])){
 								<p>Would you like to join with us. Please Conatct us or click the button to learn more.</p>
 							</header>
 							<ul class="actions stacked">
-								<li><a href="#" class="button fit primary">Contact Us</a></li>
+								<li><a href="contact-us.php" class="button fit primary">Contact Us</a></li>
 								<li><a href="#" class="button fit">Learn More</a></li>
 							</ul>
 						</div>
