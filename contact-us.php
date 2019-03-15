@@ -5,7 +5,8 @@ $result = "";
 if(isset($_POST['submit'])){
     require 'PHPMailer/PHPMailerAutoload.php';
     $mail = new PHPMailer;
-    $mail->Host='$mtp.gmail.com';
+    $mail->isSMTP();
+    $mail->Host='smtp.gmail.com';
     $mail->Port=587;
     $mail->SMTPAuth=true;
     $mail->SMTPSecure='tls';
@@ -13,7 +14,7 @@ if(isset($_POST['submit'])){
     $mail->Password='Parkme@2019';
 
     $mail->setFrom($_POST['mail'],$_POST['name']);
-    $mail->addAddress('kavindaperera97@gmail.com');
+    $mail->addAddress('parkme.kavindaperera@gmail.com');
     $mail->addReplyTo($_POST['mail'],$_POST['name']);
 
     $mail->isHTML(true);
@@ -23,7 +24,7 @@ if(isset($_POST['submit'])){
     if(!$mail->send()){
         $result="Something went wrong";
     }else{
-        $result="Thanks".$_POST['name']."for contacting us.We'll get back to you soon!";   
+        $result="Thank you ".$_POST['name']." for contacting us.We'll get back to you soon!";   
     }
 }
 
