@@ -40,7 +40,9 @@
 											<li><a href="parks.html">Parks</a></li>
 											<li><a href="registration.php">Sign Up</a></li>
 											<li><a href="login.php">Login</a></li>
+											<li><a href="reviews.php">Reviews</a></li>
 											<li><a href="about.html">About us</a></li>
+
 										</ul>
 									</div>
 								</li>
@@ -51,6 +53,7 @@
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
+						<h1><img src="assets/img/app-icon-transparent.png" alt="login-logo" class="app-logo"><h1>
 						  <h2>Park Me</h2>
 							<p>The smart parking app<br />
 							for your need<br />

@@ -58,10 +58,10 @@ if (isset($_GET['q'])){
 									<div id="menu">
 										<ul>
 											<li><a href="index.html">Home</a></li>
-											<li><a href="parks.html">Parks</a></li>
+											<li><a href="parks.php">Parks</a></li>
 											<!--li><a href="registration.php">Sign Up</a></li-->
 											<li><a href="home_afterlogin.php?q=logout">Logout</a></li>
-											<li><a href="about.html">Contact us</a></li>
+											<li><a href="contact-us.php">Contact us</a></li>
 										</ul>
 									</div>
 								</li>
@@ -72,6 +72,7 @@ if (isset($_GET['q'])){
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
+						<h1><img src="assets/img/app-icon-transparent.png" alt="login-logo" class="app-logo"><h1>
 						  <h2>Park Me</h2>
 							<p>The smart parking app<br />
 							for your need<br />
@@ -87,15 +88,13 @@ if (isset($_GET['q'])){
 					<section id="one" class="wrapper style1 special" >
 						<div class="inner" >
 							<header class="major">
-								<h2>Arcu aliquet vel lobortis ata nisl<br />
-								eget augue amet aliquet nisl cep donec</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
-								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+								<h2>Parking made easy</h2>
+								<p>Find your best option for every journey</p>
 							</header>
 							<ul class="icons major">
-								<li><span class="icon fa-diamond major style1"><span class="label">Lorem</span></span></li>
-								<li><span class="icon fa-heart-o major style2"><span class="label">Ipsum</span></span></li>
-								<li><span class="icon fa-code major style3"><span class="label">Dolor</span></span></li>
+								<li><span class="icon fa-car major style1"><span class="label">Lorem</span></span></li>
+								<li><span class="icon fa-motorcycle major style2"><span class="label">Ipsum</span></span></li>
+								<li><span class="icon fa-truck major style3"><span class="label">Dolor</span></span></li>
 							</ul>
 						</div>
 					</section>
@@ -131,13 +130,18 @@ if (isset($_GET['q'])){
 					<section id="three" class="wrapper style3 special">
 						<div class="inner">
 							<header class="major">
-								<h2>Accumsan mus tortor nunc aliquet</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
-								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+								<h2>What users are saying</h2>
+								<p>Don’t just take our word for it – check out some of the latest customer reviews for our London parking spaces</p>
 							</header>
 							<ul class="features">
-								<li class="icon fa-paper-plane-o">
-									<h3>Arcu accumsan</h3>
+								<li class="icon fa-heart-o">
+								<h2>Minul</h2>
+		
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
 									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
 								</li>
 								<li class="icon fa-laptop">
@@ -168,11 +172,11 @@ if (isset($_GET['q'])){
 					<section id="cta" class="wrapper style4">
 						<div class="inner">
 							<header>
-								<h2>Owning a Car Park</h2>
-								<p>Would you like to join with us. Please Conatct us or click the button to learn more.</p>
+								<h2>Rent out your parking space</h2>
+								<p>Would you like to join with us. It‘s free to list and only takes a few minutes to get up and running.</p>
 							</header>
 							<ul class="actions stacked">
-								<li><a href="#" class="button fit primary">Contact Us</a></li>
+								<li><a href="contact-us.php" class="button fit primary">Contact Us</a></li>
 								<li><a href="#" class="button fit">Learn More</a></li>
 							</ul>
 						</div>
