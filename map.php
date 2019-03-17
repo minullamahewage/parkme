@@ -15,22 +15,23 @@
     $carpark->return_location(1);
     $cplat=$carpark->cplat;
     $cplng=$carpark->cplng;
-    echo $cplat;
+    //echo $cplat;
     $cparray= array();
-    for ($i=1; $i<6; $i++){
+    for ($i=0; $i<5; $i++){
         ${"carpark".$i}=new CarPark();
         ${"carpark".$i}->return_location($i);
-        echo $i;
+        //echo $i;
         $cparray[$i]= array($i,${"carpark".$i}->cplat,${"carpark".$i}->cplng);
         
     }
-    $js_cparray1 = json_encode($cparray[1]);
+    /*$js_cparray1 = json_encode($cparray[1]);
     $js_cparray2 = json_encode($cparray[2]);
     $js_cparray3 = json_encode($cparray[3]);
     $js_cparray4 = json_encode($cparray[4]);
     $js_cparray5 = json_encode($cparray[5]);
-    echo json_encode($cparray[1]);
-    echo $js_cparray1;
+    echo json_encode($cparray[1]);*/
+    $js_cparray= json_encode($cparray);
+    //$output=$cparray[1][1]
     //echo "<script type='text/javascript'>alert('$cplat');</script>";
 	/*if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
 		if ( isset( $_REQUEST[ 'submit' ] ) ) {
@@ -50,8 +51,41 @@
 			}
 		}
 	}*/
-  ?>
-  
+    ?>
+    <script>
+        function updateCarParks(){
+            var cparray = <?php echo $js_cparray ?>;
+            //getDistancesList(cparray[1]);
+            //console.log(cparray[0][1]);
+            getDistancesList(cparray);
+
+            setTimeout(function() {
+            //console.log(distance);
+            //console.log(cpDistanceArray[1][1]);
+            console.log(cpDistanceArray[1][1]);
+            cpDistanceArray.sort(function(a, b) {
+                var valueA, valueB;
+
+                valueA = a[1]; // Where 1 is your index, from your example
+                valueB = b[1];
+                if (valueA < valueB) {
+                    return -1;
+                }
+                else if (valueA > valueB) {
+                    return 1;
+                }
+                return 0;
+            });
+            //cpDistanceArray.sort(function(a, b){return a[1] - b[1]});
+            console.log(cpDistanceArray[0][1]);
+            console.log(cpDistanceArray[1][1]);
+            console.log(cpDistanceArray[2][1]);
+            console.log(cpDistanceArray[3][1]);
+            console.log(cpDistanceArray[4][1]);
+            }, 15000);
+            
+    }
+    </script>
   </head>
   <body>
   <div style="width: 640px; height: 480px" id="mapContainer"></div>
@@ -59,7 +93,7 @@
       <div class="map-text-box">
                 <a class="btn btn-full" href="#" id="get-location-btn" onclick="getLocation()">Get Location </a> 
                 <a class="btn btn-full" href="#" id="get-location-btn" onclick="navigate(<?php echo $cplat; ?>,<?php echo $cplng; ?>)">Navigate </a>
-                <a class="btn btn-ghost"  href="#" id="carkpark-info" onclick="updateCarParks(<?php echo $js_cparray1; ?>,<?php echo $js_cparray2 ?>,<?php echo $js_cparray3 ?>,<?php echo $js_cparray4 ?>,<?php echo $js_cparray5 ?>)">Carpark Info</a>
+                <a class="btn btn-ghost"  href="#" id="carkpark-info" onclick="updateCarParks()">Carpark Info</a>
             </div>
   
   </body>

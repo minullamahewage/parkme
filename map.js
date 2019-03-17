@@ -25,9 +25,18 @@ var platform = new H.service.Platform({
     // Add the marker to the map:
     map.addObject(marker);
 
-//get current location
+
 var lat;
 var lng;
+var distance;
+var cp_var;
+cpDistanceArray = new Array();
+cpno=5;
+for(i=0;i<cpno;i++){
+    cpDistanceArray[i]=new Array(i,0);
+}
+var cpinfo;
+//get current location
 //main function button press
 function getLocation() {
     if (navigator.geolocation) {
@@ -50,10 +59,11 @@ function getDistance(cplat,cplng){
     xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         readDistance(this);
+        
         }
     };
-    console.log(cplat,cplng);
-    console.log(lat,lng);
+    //console.log(cplat,cplng);
+    //console.log(lat,lng);
     xhttp.open("GET", "https://route.api.here.com/routing/7.2/calculateroute.xml?app_id=EaMacGi1Wj3dRmQlGXCu&app_code=YXiH50dmZNPxmzS0ldy6Sw&waypoint0=geo!"+lat+","+lng+"&waypoint1=geo!"+cplat+","+cplng+"&mode=fastest;car;traffic:disabled", true);
     xhttp.send();
 }
@@ -62,15 +72,37 @@ function readDistance(xml) {
     var xmlDoc = xml.responseXML;
     var x = xmlDoc.getElementsByTagName('Distance')[0];
     var y = x.childNodes[0];
-    console.log(y);
+    distance=y;
+    //console.log(cp_var[0]);
+    
+    //console.log(distance);
     //document.getElementById("demo").innerHTML = y.nodeValue; 
 }
 function navigate(cplat,cplng){
     window.open("https://wego.here.com/directions/drive/"+lat+","+lng+"/"+cplat+","+cplng+"?map="+cplat+","+cplng+",13,normal&avoid=carHOV") ;
 }
+
 //function getRoute(){
    // https://route.api.here.com/routing/7.2/calculateroute.xml?app_id=EaMacGi1Wj3dRmQlGXCu&app_code=YXiH50dmZNPxmzS0ldy6Sw&waypoint0=geo!6.795043,79.900576&waypoint1=geo!6.911750,79.851406&mode=fastest;car;traffic:disabled
 //}
-function updateCarParks(cparray1,cparray2,cparray3,cparray4,cparray5){
-    console.log(cparray1);
+function getDistancesList(cparray){
+    //console.log(cpDistanceArray[3][1]);
+    for (index = 0; index < 5; index++) {
+        (function (index) {
+            setTimeout(function () {
+                cp=cparray[index];
+                cp_var=cp;
+                getDistance(cp[1],cp[2]);
+                console.log(index);
+                var distanceint=parseInt(distance,10);
+                console.log(distance);
+                cpDistanceArray[index][1]=distanceint
+            }, 3000*index+1);
+          })(index);
+        
+    }    
+    
+    
+    
+    
 }
