@@ -1,9 +1,12 @@
 <?php
 
 $result = "";
+require 'class.mail.php';
+$mail_db = new Mail();
+
 
 if(isset($_POST['submit'])){
-    require 'PHPMailer/PHPMailerAutoload.php';
+    /**require 'PHPMailer/PHPMailerAutoload.php';
     $mail = new PHPMailer;
     $mail->isSMTP();
     $mail->Host='smtp.gmail.com';
@@ -20,12 +23,23 @@ if(isset($_POST['submit'])){
     $mail->isHTML(true);
     $mail->Subject='Form Submission: '.$_POST['subject'];
     $mail->Body='<h1 align=center>Name'.$_POST['name'].'<br>Email: '.$_POST['mail'].'<br>Message: '.$_POST['message'].'</h1>';
+    */
 
+    $save = $mail_db->save_mail($_POST['name'],$_POST['mail'],$_POST['phone'],$_POST['message']);
+    if ($save) {
+			// Registration Success
+			//echo 'Registration successful <a href="login.php">Click here</a> to login';
+				header("location:index.php");;
+			} else {
+			// Registration Failed
+			echo 'Something went wrong';
+			}
+    /*
     if(!$mail->send()){
         $result="Something went wrong";
     }else{
         $result="Thank you ".$_POST['name']." for contacting us.We'll get back to you soon!";   
-    }
+    }*/
 }
 
 ?>
