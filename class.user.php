@@ -5,8 +5,6 @@ include "db_config.php";
 
 		public $db;
 
-		
-
 		public function __construct(){
 			$this->db = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
@@ -27,14 +25,13 @@ include "db_config.php";
 			$count_row = $check->num_rows;
 
 			//if the username is not in db then insert to the table
-			if ($count_row == 0){
+			//if ($count_row == 0){
 				$sql1="INSERT INTO users SET ufname='$ufname', upass='$upass', uemail='$uemail', udob='$udob'";
 				$result = mysqli_query($this->db,$sql1) or die(mysqli_connect_errno()."Data cannot inserted");
         		return $result;
-			}
-			else { return false;}
+			//}
+			//else { return false;}
 		}
-
 		/*** for login process ***/
 		public function check_login($uemail, $upass){
 			//echo $upass;
@@ -75,7 +72,7 @@ include "db_config.php";
 	    public function user_logout() {
 	        $_SESSION['login'] = FALSE;
 	        session_destroy();
-	    }
+	    } 
 
 	}
 ?>
