@@ -10,14 +10,16 @@
   type="text/javascript" charset="utf-8"></script>
 
   <?php
-	require 'class.carpark.php';
-    $carpark = new CarPark(); 
+    require 'class.carpark.php';
+    /*$carpark = new CarPark(); 
     $carpark->return_location(1);
     $cplat=$carpark->cplat;
     $cplng=$carpark->cplng;
-    //echo $cplat;
+    //echo $cplat;*/
+
+    //retreive data from the database into an array
     $cparray= array();
-    for ($i=0; $i<5; $i++){
+    for ($i=0; $i<7; $i++){
         ${"carpark".$i}=new CarPark();
         ${"carpark".$i}->return_location($i);
         //echo $i;
@@ -57,6 +59,13 @@
             var cparray = <?php echo $js_cparray ?>;
             //getDistancesList(cparray[1]);
             //console.log(cparray[0][1]);
+            //console.log("cpid: "+ cparray[0][0]+ "cplat: "+ cparray[0][1]+ "cplng: "+ cparray[0][2]);
+            console.log("cpid: "+ cparray[1][0]+ ", cplat: "+ cparray[1][1]+ ", cplng: "+ cparray[1][2]);
+            console.log("cpid: "+ cparray[2][0]+ ", cplat: "+ cparray[2][1]+ ", cplng: "+ cparray[2][2]);
+            console.log("cpid: "+ cparray[3][0]+ ", cplat: "+ cparray[3][1]+ ", cplng: "+ cparray[3][2]);
+            console.log("cpid: "+ cparray[4][0]+ ", cplat: "+ cparray[4][1]+ ", cplng: "+ cparray[4][2]);
+            console.log("cpid: "+ cparray[5][0]+ ", cplat: "+ cparray[5][1]+ ", cplng: "+ cparray[5][2]);
+            console.log("cpid: "+ cparray[6][0]+ ", cplat: "+ cparray[6][1]+ ", cplng: "+ cparray[6][2]);
             getDistancesList(cparray);
 
             setTimeout(function() {
@@ -77,14 +86,16 @@
                 return 0;
             });
             //cpDistanceArray.sort(function(a, b){return a[1] - b[1]});
-            console.log(cpInfoArray[0][1]+" "+cpInfoArray[0][2]);
-            console.log(cpInfoArray[1][1]+" "+cpInfoArray[1][2]);
-            console.log(cpInfoArray[2][1]+" "+cpInfoArray[2][2]);
-            console.log(cpInfoArray[3][1]+" "+cpInfoArray[3][2]);
-            console.log(cpInfoArray[4][1]+" "+cpInfoArray[4][2]);
+            //console.log(cpInfoArray[0][0]+"- Distance: "+ cpInfoArray[0][1]+"Travel Time: "+cpInfoArray[0][2]);
+            //console.log(cpInfoArray[1][0]+"- Distance: "+ cpInfoArray[1][1]+"Travel Time: "+cpInfoArray[1][2]);
+            console.log(cpInfoArray[2][0]+"- Distance: "+ cpInfoArray[2][1]+", Travel Time: "+cpInfoArray[2][2]);
+            console.log(cpInfoArray[3][0]+"- Distance: "+ cpInfoArray[3][1]+", Travel Time: "+cpInfoArray[3][2]);
+            console.log(cpInfoArray[4][0]+"- Distance: "+ cpInfoArray[4][1]+", Travel Time: "+cpInfoArray[4][2]);
+            console.log(cpInfoArray[5][0]+"- Distance: "+ cpInfoArray[5][1]+", Travel Time: "+cpInfoArray[5][2]);
+            console.log(cpInfoArray[6][0]+"- Distance: "+ cpInfoArray[6][1]+", Travel Time: "+cpInfoArray[6][2]);
 
             
-            }, 15000);
+            }, 10000);
 
 
             

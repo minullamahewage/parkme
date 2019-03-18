@@ -32,7 +32,7 @@ var distance;
 var traveltime;
 var cp_var;
 cpInfoArray = new Array();
-cpno=5;
+cpno=7;
 for(i=0;i<cpno;i++){
     cpInfoArray[i]=new Array(i,0,0);
 }
@@ -98,27 +98,28 @@ function navigate(cplat,cplng){
 //}
 function getDistancesList(cparray){
     //console.log(cpDistanceArray[3][1]);
-    for (index = 0; index < 5; index++) {
+    for (index = 1; index < 7; index++) {
         (function (index) {
             setTimeout(function () {
                 cp=cparray[index];
                 cp_var=cp;
                 getDistance(cp[1],cp[2]);
-                //while(distance==null || distance==undefined){ }
-                console.log(index);
+                //while(parseInt(distance,10)==parseInt(distancep,10)){ }
+                //console.log(index);
                 var distanceint=parseInt(distance,10);
                 var traveltimeint=parseInt(traveltime,10);
                 console.log(distanceint);
-                document.getElementById("carpark0-btn").innerHTML="Car Park 0 \n" + "Distance : " + distance; 
+                console.log(traveltimeint);
+                //document.getElementById("carpark0-btn").innerHTML="Car Park 0 \n" + "Distance : " + distance; 
                 cpInfoArray[index][1]=distanceint;
                 cpInfoArray[index][2]=traveltimeint;
-            }, 3000*index);
+            }, 1000*index);
           })(index);
         
     }    
     
     
-    
+       
     
 }
 //convert xml objects to string
