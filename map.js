@@ -29,11 +29,12 @@ var platform = new H.service.Platform({
 var lat;
 var lng;
 var distance;
+var traveltime;
 var cp_var;
-cpDistanceArray = new Array();
+cpInfoArray = new Array();
 cpno=5;
 for(i=0;i<cpno;i++){
-    cpDistanceArray[i]=new Array(i,0);
+    cpInfoArray[i]=new Array(i,0,0);
 }
 var cpinfo;
 //get current location
@@ -66,13 +67,23 @@ function getDistance(cplat,cplng){
     //console.log(lat,lng);
     xhttp.open("GET", "https://route.api.here.com/routing/7.2/calculateroute.xml?app_id=EaMacGi1Wj3dRmQlGXCu&app_code=YXiH50dmZNPxmzS0ldy6Sw&waypoint0=geo!"+lat+","+lng+"&waypoint1=geo!"+cplat+","+cplng+"&mode=fastest;car;traffic:disabled", true);
     xhttp.send();
+    //window.open("https://route.api.here.com/routing/7.2/calculateroute.xml?app_id=EaMacGi1Wj3dRmQlGXCu&app_code=YXiH50dmZNPxmzS0ldy6Sw&waypoint0=geo!"+lat+","+lng+"&waypoint1=geo!"+cplat+","+cplng+"&mode=fastest;car;traffic:disabled");
+    
 }
 //get distance from xml file called inside getDistance()   
 function readDistance(xml) {
+    //var xmlText = new XMLSerializer().serializeToString(xml);
     var xmlDoc = xml.responseXML;
     var x = xmlDoc.getElementsByTagName('Distance')[0];
     var y = x.childNodes[0];
-    distance=y;
+    //console.log(typeof b);
+
+    var a = xmlDoc.getElementsByTagName('BaseTime')[0];
+    var b = a.childNodes[0];
+    distance= xmlToString(y);
+    traveltime=xmlToString(b);
+    console.log(distance);
+    console.log(traveltime);
     //console.log(cp_var[0]);
     
     //console.log(distance);
@@ -93,11 +104,15 @@ function getDistancesList(cparray){
                 cp=cparray[index];
                 cp_var=cp;
                 getDistance(cp[1],cp[2]);
+                //while(distance==null || distance==undefined){ }
                 console.log(index);
                 var distanceint=parseInt(distance,10);
-                console.log(distance);
-                cpDistanceArray[index][1]=distanceint
-            }, 3000*index+1);
+                var traveltimeint=parseInt(traveltime,10);
+                console.log(distanceint);
+                document.getElementById("carpark0-btn").innerHTML="Car Park 0 \n" + "Distance : " + distance; 
+                cpInfoArray[index][1]=distanceint;
+                cpInfoArray[index][2]=traveltimeint;
+            }, 3000*index);
           })(index);
         
     }    
@@ -105,4 +120,18 @@ function getDistancesList(cparray){
     
     
     
+}
+//convert xml objects to string
+function xmlToString(xmlData) { 
+
+    var xmlString;
+    //IE
+    if (window.ActiveXObject){
+        xmlString = xmlData.xml;
+    }
+    // code for Mozilla, Firefox, Opera, etc.
+    else{
+        xmlString = (new XMLSerializer()).serializeToString(xmlData);
+    }
+    return xmlString;
 }

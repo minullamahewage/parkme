@@ -62,12 +62,12 @@
             setTimeout(function() {
             //console.log(distance);
             //console.log(cpDistanceArray[1][1]);
-            console.log(cpDistanceArray[1][1]);
-            cpDistanceArray.sort(function(a, b) {
+            //console.log(cpDistanceArray[1][1]);
+            cpInfoArray.sort(function(a, b) {
                 var valueA, valueB;
 
-                valueA = a[1]; // Where 1 is your index, from your example
-                valueB = b[1];
+                valueA = a[2]; // Where 1 is your index, from your example
+                valueB = b[2];
                 if (valueA < valueB) {
                     return -1;
                 }
@@ -77,12 +77,16 @@
                 return 0;
             });
             //cpDistanceArray.sort(function(a, b){return a[1] - b[1]});
-            console.log(cpDistanceArray[0][1]);
-            console.log(cpDistanceArray[1][1]);
-            console.log(cpDistanceArray[2][1]);
-            console.log(cpDistanceArray[3][1]);
-            console.log(cpDistanceArray[4][1]);
+            console.log(cpInfoArray[0][1]+" "+cpInfoArray[0][2]);
+            console.log(cpInfoArray[1][1]+" "+cpInfoArray[1][2]);
+            console.log(cpInfoArray[2][1]+" "+cpInfoArray[2][2]);
+            console.log(cpInfoArray[3][1]+" "+cpInfoArray[3][2]);
+            console.log(cpInfoArray[4][1]+" "+cpInfoArray[4][2]);
+
+            
             }, 15000);
+
+
             
     }
     </script>
@@ -94,7 +98,10 @@
                 <a class="btn btn-full" href="#" id="get-location-btn" onclick="getLocation()">Get Location </a> 
                 <a class="btn btn-full" href="#" id="get-location-btn" onclick="navigate(<?php echo $cplat; ?>,<?php echo $cplng; ?>)">Navigate </a>
                 <a class="btn btn-ghost"  href="#" id="carkpark-info" onclick="updateCarParks()">Carpark Info</a>
+                
             </div>
-  
+            <div style="position: absolute; top:40px; left:800px; width:600px; height:600px">
+            <button style="width: 400px; height: 40px"class="btn btn-full" href="#" id="carpark0-btn" >Car Park 0</button>
+            </div>
   </body>
 </html>
