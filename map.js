@@ -25,9 +25,19 @@ var platform = new H.service.Platform({
     // Add the marker to the map:
     map.addObject(marker);
 
-//get current location
+
 var lat;
 var lng;
+var distance;
+var traveltime;
+var cp_var;
+cpInfoArray = new Array();
+cpno=7;
+for(i=0;i<cpno;i++){
+    cpInfoArray[i]=new Array(i,0,0);
+}
+var cpinfo;
+//get current location
 //main function button press
 function getLocation() {
     if (navigator.geolocation) {
@@ -50,27 +60,79 @@ function getDistance(cplat,cplng){
     xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         readDistance(this);
+        
         }
     };
-    console.log(cplat,cplng);
-    console.log(lat,lng);
+    //console.log(cplat,cplng);
+    //console.log(lat,lng);
     xhttp.open("GET", "https://route.api.here.com/routing/7.2/calculateroute.xml?app_id=EaMacGi1Wj3dRmQlGXCu&app_code=YXiH50dmZNPxmzS0ldy6Sw&waypoint0=geo!"+lat+","+lng+"&waypoint1=geo!"+cplat+","+cplng+"&mode=fastest;car;traffic:disabled", true);
     xhttp.send();
+    //window.open("https://route.api.here.com/routing/7.2/calculateroute.xml?app_id=EaMacGi1Wj3dRmQlGXCu&app_code=YXiH50dmZNPxmzS0ldy6Sw&waypoint0=geo!"+lat+","+lng+"&waypoint1=geo!"+cplat+","+cplng+"&mode=fastest;car;traffic:disabled");
+    
 }
 //get distance from xml file called inside getDistance()   
 function readDistance(xml) {
+    //var xmlText = new XMLSerializer().serializeToString(xml);
     var xmlDoc = xml.responseXML;
     var x = xmlDoc.getElementsByTagName('Distance')[0];
     var y = x.childNodes[0];
-    console.log(y);
+    //console.log(typeof b);
+
+    var a = xmlDoc.getElementsByTagName('BaseTime')[0];
+    var b = a.childNodes[0];
+    distance= xmlToString(y);
+    traveltime=xmlToString(b);
+    console.log(distance);
+    console.log(traveltime);
+    //console.log(cp_var[0]);
+    
+    //console.log(distance);
     //document.getElementById("demo").innerHTML = y.nodeValue; 
 }
 function navigate(cplat,cplng){
     window.open("https://wego.here.com/directions/drive/"+lat+","+lng+"/"+cplat+","+cplng+"?map="+cplat+","+cplng+",13,normal&avoid=carHOV") ;
 }
+
 //function getRoute(){
    // https://route.api.here.com/routing/7.2/calculateroute.xml?app_id=EaMacGi1Wj3dRmQlGXCu&app_code=YXiH50dmZNPxmzS0ldy6Sw&waypoint0=geo!6.795043,79.900576&waypoint1=geo!6.911750,79.851406&mode=fastest;car;traffic:disabled
 //}
-function updateCarParks(cparray1,cparray2,cparray3,cparray4,cparray5){
-    console.log(cparray1);
+function getDistancesList(cparray){
+    //console.log(cpDistanceArray[3][1]);
+    for (index = 1; index < 7; index++) {
+        (function (index) {
+            setTimeout(function () {
+                cp=cparray[index];
+                cp_var=cp;
+                getDistance(cp[1],cp[2]);
+                //while(parseInt(distance,10)==parseInt(distancep,10)){ }
+                //console.log(index);
+                var distanceint=parseInt(distance,10);
+                var traveltimeint=parseInt(traveltime,10);
+                console.log(distanceint);
+                console.log(traveltimeint);
+                //document.getElementById("carpark0-btn").innerHTML="Car Park 0 \n" + "Distance : " + distance; 
+                cpInfoArray[index][1]=distanceint;
+                cpInfoArray[index][2]=traveltimeint;
+            }, 1000*index);
+          })(index);
+        
+    }    
+    
+    
+       
+    
+}
+//convert xml objects to string
+function xmlToString(xmlData) { 
+
+    var xmlString;
+    //IE
+    if (window.ActiveXObject){
+        xmlString = xmlData.xml;
+    }
+    // code for Mozilla, Firefox, Opera, etc.
+    else{
+        xmlString = (new XMLSerializer()).serializeToString(xmlData);
+    }
+    return xmlString;
 }
