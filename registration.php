@@ -30,7 +30,9 @@
 				header("location:login.php");;
 			} else {
 			// Registration Failed
-			echo 'Registration failed. Email or Username already exits please try again';
+				$message = "Registration failed. Email or Username already exits please try again.\\nTry again.";
+				echo "<script type='text/javascript'>alert('$message');</script>";
+
 			}
 		}
 	}
@@ -42,7 +44,7 @@
 		function submitreg() {
 			var form = document.register;
 			if ( form.ufname.value == "" ) {
-				alert( "Enter full name." );
+				document.getElementById("fnamevalid").style.display="Fuck";
 				return false;
 			} else if ( form.uemail.value == "" ) {
 				alert( "Enter email" );
@@ -51,8 +53,30 @@
 				alert( "Enter password." );
 				return false;
 
+			}else if(form.upass.value!=form.upassconfirm.value){
+				alert("Password does not match.");
+				return false;
+			}else if(form.terms.checked==false){
+				alert("Please accept terms and conditions to continue");
+				return false;
+				
 			}
+			
 		}
+		function showpass(obj){
+
+  var obj = document.getElementById('password');
+  obj.type = "text";
+	
+
+}
+		function hidepass(obj){
+
+  var obj = document.getElementById('password');
+  obj.type = "password";
+	
+
+}
 	</script>
 
 	<div class="container">
@@ -60,9 +84,20 @@
 			<div class="row">
 				<h4>Personal Details</h4>
 				<div class="input-group input-group-icon">
-					<input type="text" placeholder="Full Name" id="nameID" name='ufname'/>
+					<input type="text" placeholder="First Name" id="nameID" name='ufname'/>
 					<div class="input-icon"><i class="fa fa-user"></i>
+						<div id="fnamevalid" style="color:Red;display:none">
+						</div>
 					</div>
+					
+				</div>
+				<div class="input-group input-group-icon">
+					<input type="text" placeholder="Last Name" id="nameID" name='ufname'/>
+					<div class="input-icon"><i class="fa fa-user"></i>
+						<div id="fnamevalid" style="color:Red;display:none">
+						</div>
+					</div>
+					
 				</div>
 				<div class="input-group input-group-icon">
 					<input type="email" placeholder="Email Adress" id="emailID" name='uemail'/>
@@ -70,7 +105,18 @@
 					</div>
 				</div>
 				<div class="input-group input-group-icon">
-					<input type="password" placeholder="Password" id="passwordID" name='upass'/>
+					<input type="password" placeholder="Password" id="password" name='upass'/>
+					<div>
+							<span onmousedown = "showpass()" onmouseup = "hidepass()"toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" ></span>
+						</div>
+					<div class="input-icon"><i class="fa fa-key"></i>
+					</div>
+				</div>
+				<div class="input-group input-group-icon">
+					<input type="password" placeholder="Confirm Password" id="password" name='upassconfirm'/>
+					<div>
+							<span onmousedown = "showpass()" onmouseup = "hidepass()"toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" ></span>
+						</div>
 					<div class="input-icon"><i class="fa fa-key"></i>
 					</div>
 				</div>
@@ -100,7 +146,7 @@
 			<div class="row">
 				<h4>Terms and Conditions</h4>
 				<div class="input-group">
-					<input type="checkbox" id="terms"/>
+					<input type="checkbox" id="terms" name="terms"/>
 					<label for="terms">I accept the terms and conditions for signing up to this service, and hereby confirm I have read the privacy policy.</label>
 				</div>
 				<div class="row">
