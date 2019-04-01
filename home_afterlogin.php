@@ -76,7 +76,7 @@ if (isset($_GET['q'])){
 						  <h2>Park Me</h2>
 							<p>The smart parking app<br />
 							for your need<br />
-					      <strong>park me</strong></p>
+					      <!--strong>park me</strong--></p>
 							<ul class="actions special">
 								<li><a href="home_afterlogin.php?q=logout" class="button primary">Logout</a></li>
 							</ul>
@@ -102,12 +102,12 @@ if (isset($_GET['q'])){
 				<!-- Two -->
 					<section id="two" class="wrapper alt style2">
 						<section class="spotlight">
-							<div  class = "content" ><h2>Check it out!<br />
+							<!--div  class = "content" ><h2>Check it out!<br />
 								Park Me</h2>
-								<p>Location or anything by Minul and Sons</p></div>
+								<p></p></div-->
 							<div class="iframe-container">
 							
-								<iframe src="map.php" class="iframe" scrolling="" frameborder="0" /></iframe>
+								<iframe src="map.php" class="iframe" scrolling="no" frameborder="0" ></iframe>
 							</div>
 						</section>
 						<!--<section class="spotlight">
@@ -140,8 +140,8 @@ if (isset($_GET['q'])){
 									<span class="fa fa-star checked"></span>
 									<span class="fa fa-star checked"></span>
 									<span class="fa fa-star checked"></span>
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
 									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
 								</li>
 								<li class="icon fa-laptop">

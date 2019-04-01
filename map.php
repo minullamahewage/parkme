@@ -11,11 +11,6 @@
 
   <?php
     require 'class.carpark.php';
-    /*$carpark = new CarPark(); 
-    $carpark->return_location(1);
-    $cplat=$carpark->cplat;
-    $cplng=$carpark->cplng;
-    //echo $cplat;*/
 
     //retreive data from the database into an array
     $cparray= array();
@@ -26,12 +21,7 @@
         $cparray[$i]= array($i,${"carpark".$i}->cplat,${"carpark".$i}->cplng);
         
     }
-    /*$js_cparray1 = json_encode($cparray[1]);
-    $js_cparray2 = json_encode($cparray[2]);
-    $js_cparray3 = json_encode($cparray[3]);
-    $js_cparray4 = json_encode($cparray[4]);
-    $js_cparray5 = json_encode($cparray[5]);
-    echo json_encode($cparray[1]);*/
+    //encoding php array for use with js
     $js_cparray= json_encode($cparray);
     //$output=$cparray[1][1]
     //echo "<script type='text/javascript'>alert('$cplat');</script>";
@@ -55,8 +45,10 @@
 	}*/
     ?>
     <script>
+        var cparray;
+        //pass car park data to calculate distance and travel time
         function updateCarParks(){
-            var cparray = <?php echo $js_cparray ?>;
+            cparray = <?php echo $js_cparray ?>;
             //getDistancesList(cparray[1]);
             //console.log(cparray[0][1]);
             //console.log("cpid: "+ cparray[0][0]+ "cplat: "+ cparray[0][1]+ "cplng: "+ cparray[0][2]);
@@ -68,14 +60,12 @@
             console.log("cpid: "+ cparray[6][0]+ ", cplat: "+ cparray[6][1]+ ", cplng: "+ cparray[6][2]);
             getDistancesList(cparray);
 
-            setTimeout(function() {
-            //console.log(distance);
-            //console.log(cpDistanceArray[1][1]);
-            //console.log(cpDistanceArray[1][1]);
+            /*setTimeout(function() {
+                //sort array of car parks based on travel time
             cpInfoArray.sort(function(a, b) {
                 var valueA, valueB;
 
-                valueA = a[2]; // Where 1 is your index, from your example
+                valueA = a[2];
                 valueB = b[2];
                 if (valueA < valueB) {
                     return -1;
@@ -85,17 +75,20 @@
                 }
                 return 0;
             });
-            //cpDistanceArray.sort(function(a, b){return a[1] - b[1]});
             //console.log(cpInfoArray[0][0]+"- Distance: "+ cpInfoArray[0][1]+"Travel Time: "+cpInfoArray[0][2]);
             //console.log(cpInfoArray[1][0]+"- Distance: "+ cpInfoArray[1][1]+"Travel Time: "+cpInfoArray[1][2]);
-            console.log(cpInfoArray[2][0]+"- Distance: "+ cpInfoArray[2][1]+", Travel Time: "+cpInfoArray[2][2]);
+            console.log(cpInfoArray[2][0]+"- Distance: "+ cpInfoArray[2][1]+", Travel Time: "+cpInfoArray[2][2]+ " cplat: " + cpInfoArray[2][3]);
             console.log(cpInfoArray[3][0]+"- Distance: "+ cpInfoArray[3][1]+", Travel Time: "+cpInfoArray[3][2]);
             console.log(cpInfoArray[4][0]+"- Distance: "+ cpInfoArray[4][1]+", Travel Time: "+cpInfoArray[4][2]);
             console.log(cpInfoArray[5][0]+"- Distance: "+ cpInfoArray[5][1]+", Travel Time: "+cpInfoArray[5][2]);
             console.log(cpInfoArray[6][0]+"- Distance: "+ cpInfoArray[6][1]+", Travel Time: "+cpInfoArray[6][2]);
-
+            document.getElementById("carpark1-btn").innerHTML="<span>   Car Park "+ cpInfoArray[2][0]+"<br/><p>Distance: "+ cpInfoArray[2][1]+"m<br/>   Travel Time: "+cpInfoArray[2][2]+"s</p></span>";
+            document.getElementById("carpark2-btn").innerHTML="<span>   Car Park "+ cpInfoArray[3][0]+"<br/><p>Distance: "+ cpInfoArray[3][1]+"m<br/>   Travel Time: "+cpInfoArray[3][2]+"s</p></span>";
+            document.getElementById("carpark3-btn").innerHTML="<span>   Car Park "+ cpInfoArray[4][0]+"<br/><p>Distance: "+ cpInfoArray[4][1]+"m<br/>   Travel Time: "+cpInfoArray[4][2]+"s</p></span>";
+            document.getElementById("carpark4-btn").innerHTML="<span>   Car Park "+ cpInfoArray[5][0]+"<br/><p>Distance: "+ cpInfoArray[5][1]+"m<br/>   Travel Time: "+cpInfoArray[5][2]+"s</p></span>";
+            document.getElementById("carpark5-btn").innerHTML="<span>   Car Park "+ cpInfoArray[6][0]+"<br/><p>Distance: "+ cpInfoArray[6][1]+"m<br/>   Travel Time: "+cpInfoArray[6][2]+"s</p></span>";
             
-            }, 10000);
+            }, 10000);*/
 
 
             
@@ -107,12 +100,17 @@
   <script src="map.js" type="text/javascript"></script>
       <div class="map-text-box">
                 <a class="btn btn-full" href="#" id="get-location-btn" onclick="getLocation()">Get Location </a> 
-                <a class="btn btn-full" href="#" id="get-location-btn" onclick="navigate(<?php echo $cplat; ?>,<?php echo $cplng; ?>)">Navigate </a>
+                <a class="btn btn-full" href="#" id="get-location-btn" onclick="navigate(cparray[1][1], cparray[1][2])">Navigate </a>
                 <a class="btn btn-ghost"  href="#" id="carkpark-info" onclick="updateCarParks()">Carpark Info</a>
                 
             </div>
-            <div style="position: absolute; top:40px; left:800px; width:600px; height:600px">
-            <button style="width: 400px; height: 40px"class="btn btn-full" href="#" id="carpark0-btn" >Car Park 0</button>
+            <div style="position: absolute; top:20px; left:800px; width:600px; height:600px">
+            <button class="btn-carpark" id="carpark1-btn" onclick="navigate(cpInfoArray[1][3], cpInfoArray[1][4])"><span>Car Park 1<br/><p> Distance: NA<br/>   Travel Time: NA</p></span></button>
+            <button class="btn-carpark" id="carpark2-btn" onclick="navigate(cpInfoArray[2][3], cpInfoArray[2][4])"><span>Car Park 2<br/><p> Distance: NA<br/>   Travel Time: NA</p></span></button>
+            <button class="btn-carpark" id="carpark3-btn" onclick="navigate(cpInfoArray[3][3], cpInfoArray[3][4])"><span>Car Park 3<br/><p> Distance: NA<br/>   Travel Time: NA</p></span></button>
+            <button class="btn-carpark" id="carpark4-btn" onclick="navigate(cpInfoArray[4][3], cpInfoArray[4][4])"><span>Car Park 4<br/><p> Distance: NA<br/>   Travel Time: NA</p></span></button>
+            <button class="btn-carpark" id="carpark5-btn" onclick="navigate(cpInfoArray[5][3], cpInfoArray[5][4])"><span>Car Park 5<br/><p> Distance: NA<br/>   Travel Time: NA</p></span></button>
+            <button class="btn-carpark" id="carpark6-btn" onclick="navigate(cpInfoArray[6][3], cpInfoArray[6][4])"><span>Car Park 6<br/><p> Distance: NA<br/>   Travel Time: NA</p></span></button>
             </div>
   </body>
 </html>
