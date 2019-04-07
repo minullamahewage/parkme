@@ -18,7 +18,12 @@
 			$login = $user->check_login( $uemail, $upass );
 			if ( $login ) {
 				// Registration Success
+				if($uemail =="admin@parkme.lk"){
+					header( "location:messages.php" );;
+				} else {
 				header( "location:home_afterlogin.php#one" );;
+				}
+			
 			} else {
 				// Registration Failed
 				$message = "Username and/or Password incorrect.\\nTry again.";
