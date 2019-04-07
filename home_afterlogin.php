@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="icon" href="assets/img/app-icon-transparent.png">
+		
 <?php
 		session_start();
 require 'class.user.php';
@@ -38,9 +39,7 @@ if (isset($_GET['q'])){
 
 				<!-- Header -->
 				
-<div id="main-body">
 
-</div>
 					<header id="header" class="alt">
 						<h1><a href="index.html">ParkMe</a></h1>
 						<nav id="nav">
@@ -101,30 +100,19 @@ if (isset($_GET['q'])){
 
 				<!-- Two -->
 					<section id="two" class="wrapper alt style2">
+				
 						<section class="spotlight">
-							<!--div  class = "content" ><h2>Check it out!<br />
-								Park Me</h2>
-								<p></p></div-->
-							<div class="iframe-container">
-							
-								<iframe src="map.php" class="iframe" scrolling="no" frameborder="0" ></iframe>
-							</div>
-						</section>
-						<!--<section class="spotlight">
 							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
-								<h2>Tortor dolore feugiat<br />
-								elementum magna</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+								<h2>Find nearby <br />
+								Car Parks</h2>
+								<p>Minul Ayyah</p>
+								<ul class="actions special">
+								<li><a href="map.php" target="_blank" class="button primary">Find Car Parks</a></li>
+							</ul>
 							</div>
 						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
-								<h2>Augue eleifend aliquet<br />
-								sed condimentum</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
-							</div>
-						</section>
-					</section>-->
+						
+					</section>
 
 				<!-- Three -->
 					<section id="three" class="wrapper style3 special">

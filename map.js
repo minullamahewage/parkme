@@ -95,6 +95,7 @@ function readDistance(xml,index) {
     cpInfoArray[index][4]=cp[2];
     updateCarParkButtons();
 }
+
 //redirect to here maps for navigation
 function navigate(cplat,cplng){
     window.open("https://wego.here.com/directions/drive/"+lat+","+lng+"/"+cplat+","+cplng+"?map="+cplat+","+cplng+",13,normal&avoid=carHOV") ;
@@ -162,4 +163,11 @@ function xmlToString(xmlData) {
         xmlString = (new XMLSerializer()).serializeToString(xmlData);
     }
     return xmlString;
+}
+
+
+//reserving
+function checkReserve(){
+    
+
 }
