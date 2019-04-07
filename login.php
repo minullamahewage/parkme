@@ -110,7 +110,7 @@ function showpass(obj){
 
 	<div id="dropDownSelect1"></div>
 
-	<script src="js/main.js"></script>
+	
 
 </body>
 </html>
