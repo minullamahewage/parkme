@@ -59,9 +59,6 @@ mark {
 	background-color: transparent;
 	color: inherit;
 }
-.checked {
-	color: orange;
-  }
 
 input::-moz-focus-inner {
 	border: 0;
@@ -2536,7 +2533,6 @@ input, select, textarea {
 		width: 100%;
 	}
 
-
 		.features li {
 			padding: 4em 4em 2em 6em ;
 			display: block;
@@ -3546,7 +3542,6 @@ input, select, textarea {
 
 /* Banner */
 
-
 	#banner {
 		display: -moz-flex;
 		display: -webkit-flex;
@@ -3798,10 +3793,10 @@ input, select, textarea {
 
 	#main > header {
 		padding: 12em 0 10em 0 ;
-		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("images/banner.jpg");
-		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("images/banner.jpg");
-		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("images/banner.jpg");
-		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("images/banner.jpg");
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
+		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-attachment: fixed;
 		background-position: center center;
 		background-repeat: no-repeat;

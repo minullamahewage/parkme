@@ -27,10 +27,10 @@
 			if ($register) {
 			// Registration Success
 			//echo 'Registration successful <a href="login.php">Click here</a> to login';
-				header("location:login.php");;
+				header("location:login.php");
 			} else {
 			// Registration Failed
-				$message = "Registration failed. Email or Username already exits please try again.\\nTry again.";
+				$message = "Registration failed. Email or Username already exist please try again.\\nTry again.";
 				echo "<script type='text/javascript'>alert('$message');</script>";
 
 			}
@@ -42,9 +42,10 @@
 <body id="registration">
 	<script type="text/javascript" language="javascript">
 		function submitreg() {
+			//alert("hi");
 			var form = document.register;
 			if ( form.ufname.value == "" ) {
-				document.getElementById("fnamevalid").style.display="Fuck";
+				alert("Enter first name");
 				return false;
 			} else if ( form.uemail.value == "" ) {
 				alert( "Enter email" );
@@ -92,7 +93,7 @@
 					
 				</div>
 				<div class="input-group input-group-icon">
-					<input type="text" placeholder="Last Name" id="nameID" name='ufname'/>
+					<input type="text" placeholder="Last Name" id="nameID" name='ulname'/>
 					<div class="input-icon"><i class="fa fa-user"></i>
 						<div id="fnamevalid" style="color:Red;display:none">
 						</div>

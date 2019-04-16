@@ -111,6 +111,7 @@ function readDistance(xml,index) {
     
     updateCarParkButtons();
 }
+
 //redirect to here maps for navigation
 function navigate(cplat,cplng){
     window.open("https://wego.here.com/directions/drive/"+lat+","+lng+"/"+cplat+","+cplng+"?map="+cplat+","+cplng+",13,normal&avoid=carHOV") ;
@@ -208,4 +209,10 @@ function xmlToString(xmlData) {
 //disabled button no slots available
 function noSlotsAvailable(){
     alert("Car Park doesn't have any available slots");
+}
+
+//reserving
+function checkReserve(){
+    
+
 }
