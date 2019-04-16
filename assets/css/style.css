@@ -380,8 +380,8 @@ p {
   padding-left : 10px;
   padding-top : 5px;
   padding-bottom: 0px;
-  width: 180px;
-  height:100px;
+  width: 186px;
+  height:130px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 1px;
@@ -400,7 +400,7 @@ p {
   content: '\00bb';
   position: absolute;
   opacity: 0;
-  top:7px;
+  top:25px;
   right: -20px;
   transition: 0.5s;
   font-size: 50px;
@@ -416,6 +416,7 @@ p {
 }
 p{
   padding-top: 0px;
+  padding-bottom : 5px;
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   text-align: left;

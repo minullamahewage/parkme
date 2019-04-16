@@ -12,18 +12,31 @@ var platform = new H.service.Platform({
     document.getElementById('mapContainer'),
     maptypes.normal.map,
     {
-      zoom: 14,
-      center: { lng: 79.861788, lat:6.913887  }
+      zoom: 13,
+      center: { lng: 79.9066, lat:6.89066 }
     });
     //var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
     // Create a marker icon from an image URL:
     var icon = new H.map.Icon('assets/graphics/parksymbol1.png');
 
     // Create a marker using the previously instantiated icon:
-    var marker = new H.map.Marker({ lat: 6.911750, lng: 79.851406 }, { icon: icon });
+    var cpmarker1 = new H.map.Marker({ lat: 6.91175, lng: 79.8514 }, { icon: icon });
+    var cpmarker2 = new H.map.Marker({ lat: 6.83284, lng: 79.8673 }, { icon: icon });
+    var cpmarker3 = new H.map.Marker({ lat: 6.84131, lng: 79.8932 }, { icon: icon });
+    var cpmarker4 = new H.map.Marker({ lat: 6.79585, lng: 79.8883 }, { icon: icon });
+    var cpmarker5 = new H.map.Marker({ lat: 6.91175, lng: 79.8514 }, { icon: icon });
+    var cpmarker6 = new H.map.Marker({ lat: 6.89066, lng: 79.9066 }, { icon: icon });
 
     // Add the marker to the map:
-    map.addObject(marker);
+    map.addObject(cpmarker1);
+    map.addObject(cpmarker2);
+    map.addObject(cpmarker3);
+    map.addObject(cpmarker4);
+    map.addObject(cpmarker5);
+    map.addObject(cpmarker6);
+
+      
+      
 
 //public variables
 var lat;
@@ -38,7 +51,7 @@ cpInfoArray = new Array();
 cpno=7;
 //Initialise carpark info array
 for(i=0;i<cpno;i++){
-    cpInfoArray[i]=new Array(i,0,0,0,0);
+    cpInfoArray[i]=new Array(i,0,0,0,0,0,0,0);
 }
 
 
@@ -56,6 +69,10 @@ function showPosition(position) {
     lat = position.coords.latitude;
     lng = position.coords.longitude;
     console.log(lat,lng);
+    center={lat:lat,lng: lng };
+    map.setCenter (center, true);
+    var mylocation = new H.map.Marker({ lat: lat, lng: lng });
+    map.addObject(mylocation);
   }
 
 //reading xml file
@@ -89,10 +106,9 @@ function readDistance(xml,index) {
     console.log(distanceint);
     console.log(distance);
     console.log(traveltime);
-    cpInfoArray[index][1]=distanceint;
-    cpInfoArray[index][2]=traveltimeint;
-    cpInfoArray[index][3]=cp[1];
-    cpInfoArray[index][4]=cp[2];
+    cpInfoArray[index][6]=distanceint;
+    cpInfoArray[index][7]=traveltimeint;
+    
     updateCarParkButtons();
 }
 //redirect to here maps for navigation
@@ -110,13 +126,15 @@ function getDistancesList(cparray){
             cparrayglobal=cparray;    
             cp=cparray[index];
                 cp_var=cp;
+                cpInfoArray[index][1]=cp[1];
+                cpInfoArray[index][2]=cp[2];
+                cpInfoArray[index][3]=parseInt(cp[3],10);
+                cpInfoArray[index][4]=parseInt(cp[4],10);
+                cpInfoArray[index][5]=parseInt(cp[5],10);
                 getDistance(cp[1],cp[2],index);   
-    }    
-    
-    
-       
-    
+    } 
 }
+
 function updateCarParkButtons(){
     testValue+=1;
     console.log(testValue);
@@ -125,8 +143,8 @@ function updateCarParkButtons(){
     cpInfoArray.sort(function(a, b) {
         var valueA, valueB;
 
-        valueA = a[2];
-        valueB = b[2];
+        valueA = a[7];
+        valueB = b[7];
         if (valueA < valueB) {
             return -1;
         }
@@ -135,18 +153,41 @@ function updateCarParkButtons(){
         }
         return 0;
     });
-    console.log(cpInfoArray[1][0]+"- Distance: "+ cpInfoArray[1][1]+", Travel Time: "+cpInfoArray[1][2]);
-    console.log(cpInfoArray[2][0]+"- Distance: "+ cpInfoArray[2][1]+", Travel Time: "+cpInfoArray[2][2]+ " cplat: " + cpInfoArray[2][3]);
-    console.log(cpInfoArray[3][0]+"- Distance: "+ cpInfoArray[3][1]+", Travel Time: "+cpInfoArray[3][2]);
-    console.log(cpInfoArray[4][0]+"- Distance: "+ cpInfoArray[4][1]+", Travel Time: "+cpInfoArray[4][2]);
-    console.log(cpInfoArray[5][0]+"- Distance: "+ cpInfoArray[5][1]+", Travel Time: "+cpInfoArray[5][2]);
-    console.log(cpInfoArray[6][0]+"- Distance: "+ cpInfoArray[6][1]+", Travel Time: "+cpInfoArray[6][2]);
-    document.getElementById("carpark1-btn").innerHTML="<span>   Car Park "+ cpInfoArray[1][0]+"<br/><p>Distance: "+ cpInfoArray[1][1]+"m<br/>   Travel Time: "+cpInfoArray[1][2]+"s</p></span>";
-    document.getElementById("carpark2-btn").innerHTML="<span>   Car Park "+ cpInfoArray[2][0]+"<br/><p>Distance: "+ cpInfoArray[2][1]+"m<br/>   Travel Time: "+cpInfoArray[2][2]+"s</p></span>";
-    document.getElementById("carpark3-btn").innerHTML="<span>   Car Park "+ cpInfoArray[3][0]+"<br/><p>Distance: "+ cpInfoArray[3][1]+"m<br/>   Travel Time: "+cpInfoArray[3][2]+"s</p></span>";
-    document.getElementById("carpark4-btn").innerHTML="<span>   Car Park "+ cpInfoArray[4][0]+"<br/><p>Distance: "+ cpInfoArray[4][1]+"m<br/>   Travel Time: "+cpInfoArray[4][2]+"s</p></span>";
-    document.getElementById("carpark5-btn").innerHTML="<span>   Car Park "+ cpInfoArray[5][0]+"<br/><p>Distance: "+ cpInfoArray[5][1]+"m<br/>   Travel Time: "+cpInfoArray[5][2]+"s</p></span>";
-    document.getElementById("carpark6-btn").innerHTML="<span>   Car Park "+ cpInfoArray[6][0]+"<br/><p>Distance: "+ cpInfoArray[6][1]+"m<br/>   Travel Time: "+cpInfoArray[6][2]+"s</p></span>";
+    cpAvailableArray =  new Array();
+    for(j=0;j<cpno;j++){
+        cpAvailableArray[j]=new Array(0,0,0,0,0,0,0,0);
+    }
+    cpaan=1;
+    for(var k=1;k<cpno; k++){
+        
+        console.log(cpInfoArray[k][3]);
+        if(cpInfoArray[k][3]!==0){
+            cpAvailableArray[cpaan]=cpInfoArray[k];
+            console.log(cpInfoArray[k][7]);
+            cpaan++;
+        }
+    }
+    for(var k=1;k<cpno; k++){
+        if(cpInfoArray[k][3]==0){
+            cpAvailableArray[cpaan]=cpInfoArray[k];
+            document.getElementById("carpark"+ cpaan +"-btn").className="btn-carpark disabled";
+            document.getElementById("carpark"+ cpaan +"-btn").onclick="function(){alert('Car Park doesn't have any available slots');}";
+            cpaan++;
+        }
+    }
+
+    console.log(cpInfoArray[1][0]+"- Distance: "+ cpInfoArray[1][6]+", Travel Time: "+cpInfoArray[1][7]+ " cpavailable: " + cpInfoArray[1][3]);
+    console.log(cpInfoArray[2][0]+"- Distance: "+ cpInfoArray[2][6]+", Travel Time: "+cpInfoArray[2][7]+ " cplat: " + cpInfoArray[2][1]);
+    console.log(cpInfoArray[3][0]+"- Distance: "+ cpInfoArray[3][6]+", Travel Time: "+cpInfoArray[3][7]);
+    console.log(cpInfoArray[4][0]+"- Distance: "+ cpInfoArray[4][6]+", Travel Time: "+cpInfoArray[4][7]);
+    console.log(cpInfoArray[5][0]+"- Distance: "+ cpInfoArray[5][6]+", Travel Time: "+cpInfoArray[5][7]);
+    console.log(cpInfoArray[6][0]+"- Distance: "+ cpInfoArray[6][6]+", Travel Time: "+cpInfoArray[6][7]);
+    document.getElementById("carpark1-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[1][0]+"<br/><p>Distance: "+ cpAvailableArray[1][6]+"m<br/>   Travel Time: "+cpAvailableArray[1][7]+"s<br/>  Available Slots: "+cpAvailableArray[1][3]+"<br/>  Booked: "+cpAvailableArray[1][5]+"</p></span>";
+    document.getElementById("carpark2-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[2][0]+"<br/><p>Distance: "+ cpAvailableArray[2][6]+"m<br/>   Travel Time: "+cpAvailableArray[2][7]+"s<br/>  Available Slots: "+cpAvailableArray[2][3]+"<br/>  Booked: "+cpAvailableArray[2][5]+"</p></span>";
+    document.getElementById("carpark3-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[3][0]+"<br/><p>Distance: "+ cpAvailableArray[3][6]+"m<br/>   Travel Time: "+cpAvailableArray[3][7]+"s<br/>  Available Slots: "+cpAvailableArray[3][3]+"<br/>  Booked: "+cpAvailableArray[3][5]+"</p></span>";
+    document.getElementById("carpark4-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[4][0]+"<br/><p>Distance: "+ cpAvailableArray[4][6]+"m<br/>   Travel Time: "+cpAvailableArray[4][7]+"s<br/>  Available Slots: "+cpAvailableArray[4][3]+"<br/>  Booked: "+cpAvailableArray[4][5]+"</p></span>";
+    document.getElementById("carpark5-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[5][0]+"<br/><p>Distance: "+ cpAvailableArray[5][6]+"m<br/>   Travel Time: "+cpAvailableArray[5][7]+"s<br/>  Available Slots: "+cpAvailableArray[5][3]+"<br/>  Booked: "+cpAvailableArray[5][5]+"</p></span>";
+    document.getElementById("carpark6-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[6][0]+"<br/><p>Distance: "+ cpAvailableArray[6][6]+"m<br/>   Travel Time: "+cpAvailableArray[6][7]+"s<br/>  Available Slots: "+cpAvailableArray[6][3]+"<br/>  Booked: "+cpAvailableArray[6][5]+"</p></span>";
     }
 }
 //convert xml objects to string
@@ -162,4 +203,9 @@ function xmlToString(xmlData) {
         xmlString = (new XMLSerializer()).serializeToString(xmlData);
     }
     return xmlString;
+}
+
+//disabled button no slots available
+function noSlotsAvailable(){
+    alert("Car Park doesn't have any available slots");
 }

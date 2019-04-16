@@ -6,8 +6,9 @@ include "db_config.php";
 		public $db;
         public $cplat;
         public $cplng;
-        public $cpavslts;
-        public $cpttlslts;
+        public $cpavailable;
+		public $cptotal;
+		public $cpbooked;
 
 		public function __construct(){
 			$this->db = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
@@ -44,7 +45,10 @@ include "db_config.php";
         	//$upass = md5($upass);
 			
             $sql1="SELECT cplat from carparks WHERE cpid='$cpid'";
-            $sql2="SELECT cplng from carparks WHERE cpid='$cpid'";
+			$sql2="SELECT cplng from carparks WHERE cpid='$cpid'";
+			$sql3="SELECT cpavailable from carparks WHERE cpid='$cpid'";
+			$sql4="SELECT cptotal from carparks WHERE cpid='$cpid'";
+			$sql5="SELECT cpbooked from carparks WHERE cpid='$cpid'";
 
             //checking if the username is available in the table
             //getting latitude
@@ -52,10 +56,24 @@ include "db_config.php";
             $user_datalat = mysqli_fetch_array($result1);
             //getting longitude
             $result2 = mysqli_query($this->db,$sql2);
-        	$user_datalng = mysqli_fetch_array($result2);
-        	//$count_row = $result->num_rows;
+			$user_datalng = mysqli_fetch_array($result2);
+			//getting available slots
+			$result3 = mysqli_query($this->db,$sql3);
+			$user_dataavailable = mysqli_fetch_array($result3);
+			//getting total slots
+			$result4 = mysqli_query($this->db,$sql4);
+			$user_datatotal = mysqli_fetch_array($result4);
+			//getting booked slots
+			$result5 = mysqli_query($this->db,$sql5);
+        	$user_databooked = mysqli_fetch_array($result5);
+			//$count_row = $result->num_rows;
+			
             $this->cplat=$user_datalat['cplat'];
-            $this->cplng=$user_datalng['cplng'];
+			$this->cplng=$user_datalng['cplng'];
+			$this->cpavailable =$user_dataavailable['cpavailable'];
+			$this->cptotal=$user_datatotal['cptotal'];
+			$this->cpbooked=$user_databooked['cpbooked'];
+			
 
             //echo $this->cplat;
             //echo $this->cplng;
