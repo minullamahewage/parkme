@@ -114,6 +114,8 @@ function readDistance(xml,index) {
 
 //redirect to here maps for navigation
 function navigate(cplat,cplng){
+    console.log(cplat);
+    console.log(cplng);
     window.open("https://wego.here.com/directions/drive/"+lat+","+lng+"/"+cplat+","+cplng+"?map="+cplat+","+cplng+",13,normal&avoid=carHOV") ;
 }
 
@@ -176,7 +178,7 @@ function updateCarParkButtons(){
             cpaan++;
         }
     }
-
+    console.log(cpAvailableArray[3][1]);
     console.log(cpInfoArray[1][0]+"- Distance: "+ cpInfoArray[1][6]+", Travel Time: "+cpInfoArray[1][7]+ " cpavailable: " + cpInfoArray[1][3]);
     console.log(cpInfoArray[2][0]+"- Distance: "+ cpInfoArray[2][6]+", Travel Time: "+cpInfoArray[2][7]+ " cplat: " + cpInfoArray[2][1]);
     console.log(cpInfoArray[3][0]+"- Distance: "+ cpInfoArray[3][6]+", Travel Time: "+cpInfoArray[3][7]);
