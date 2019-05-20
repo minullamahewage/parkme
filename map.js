@@ -39,8 +39,8 @@ var platform = new H.service.Platform({
       
 
 //public variables
-var lat;
-var lng;
+var lat=0;
+var lng=0;
 var distance;
 var traveltime;
 var cp_var;
@@ -68,6 +68,7 @@ function getLocation() {
 function showPosition(position) {
     lat = position.coords.latitude;
     lng = position.coords.longitude;
+    document.getElementById("carkpark-info").className = "btn btn-ghost";
     console.log(lat,lng);
     center={lat:lat,lng: lng };
     map.setCenter (center, true);
@@ -166,6 +167,7 @@ function updateCarParkButtons(){
         console.log(cpInfoArray[k][3]);
         if(cpInfoArray[k][3]!==0){
             cpAvailableArray[cpaan]=cpInfoArray[k];
+            document.getElementById("carpark"+ cpaan +"-btn").className="btn-carpark";
             console.log(cpInfoArray[k][7]);
             cpaan++;
         }
@@ -174,7 +176,7 @@ function updateCarParkButtons(){
         if(cpInfoArray[k][3]==0){
             cpAvailableArray[cpaan]=cpInfoArray[k];
             document.getElementById("carpark"+ cpaan +"-btn").className="btn-carpark disabled";
-            document.getElementById("carpark"+ cpaan +"-btn").onclick="function(){alert('Car Park doesn't have any available slots');}";
+            document.getElementById("carpark"+ cpaan +"-btn").onclick=function(){alert("Car Park doesn't have any available slots");};
             cpaan++;
         }
     }
@@ -191,7 +193,22 @@ function updateCarParkButtons(){
     document.getElementById("carpark4-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[4][0]+"<br/><p>Distance: "+ cpAvailableArray[4][6]+"m<br/>   Travel Time: "+cpAvailableArray[4][7]+"s<br/>  Available Slots: "+cpAvailableArray[4][3]+"<br/>  Booked: "+cpAvailableArray[4][5]+"</p></span>";
     document.getElementById("carpark5-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[5][0]+"<br/><p>Distance: "+ cpAvailableArray[5][6]+"m<br/>   Travel Time: "+cpAvailableArray[5][7]+"s<br/>  Available Slots: "+cpAvailableArray[5][3]+"<br/>  Booked: "+cpAvailableArray[5][5]+"</p></span>";
     document.getElementById("carpark6-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[6][0]+"<br/><p>Distance: "+ cpAvailableArray[6][6]+"m<br/>   Travel Time: "+cpAvailableArray[6][7]+"s<br/>  Available Slots: "+cpAvailableArray[6][3]+"<br/>  Booked: "+cpAvailableArray[6][5]+"</p></span>";
+    //document.getElementById("carpark1-btn").onclick=navigate(cpAvailableArray[1][1], cpAvailableArray[1][2]);
+    
+
     }
+    
+    /*document.getElementById("carpark2-btn").onclick=navigate(cpAvailableArray[2][1], cpAvailableArray[2][2]);
+    document.getElementById("carpark3-btn").onclick=navigate(cpAvailableArray[3][1], cpAvailableArray[3][2]);
+    document.getElementById("carpark4-btn").onclick=navigate(cpAvailableArray[4][1], cpAvailableArray[4][2]);
+    document.getElementById("carpark5-btn").onclick=navigate(cpAvailableArray[5][1], cpAvailableArray[5][2]);
+    document.getElementById("carpark6-btn").onclick=navigate(cpAvailableArray[6][1], cpAvailableArray[6][2]);
+    document.getElementById("carpark1-btn").className="btn-carpark";
+    document.getElementById("carpark2-btn").className="btn-carpark";
+    document.getElementById("carpark3-btn").className="btn-carpark";
+    document.getElementById("carpark4-btn").className="btn-carpark";
+    document.getElementById("carpark5-btn").className="btn-carpark";
+    document.getElementById("carpark6-btn").className="btn-carpark";*/
 }
 //convert xml objects to string
 function xmlToString(xmlData) { 
