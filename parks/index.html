@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Car Parks</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/stars.css">
+
+	</head>
+	<body>
+
+	
+	<div id="fh5co-page">
+	
+		<div id="fh5co-intro-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 animate-box">
+						<h2 class="intro-heading">Here is our available car parks and details.</h2>
+						
+				</div>
+			</div>
+		</div>
+		<div id="fh5co-portfolio-section">
+			<div class="container">
+		
+
+				<div id="portfoliolist" class="animate-box">
+					
+					<div class="portfolio all logo" data-cat="logo">
+						<div class="portfolio-wrapper">				
+							<img src="images/portfolio_pic1.jpg" alt= "" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Car Park 1</a>
+									<span class="text-category">Logo</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>				
+
+					<div class="portfolio all card web" data-cat="card">
+						<div class="portfolio-wrapper">			
+							<img src="images/portfolio_pic2.jpg" alt="" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Card</a>
+									<span class="text-category">Card</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>		
+					
+					<div class="portfolio all web" data-cat="web">
+						<div class="portfolio-wrapper">						
+							<img src="images/portfolio_pic3.jpg" alt="" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Sonor's Design</a>
+									<span class="text-category">Web design</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>				
+					
+					<div class="portfolio all card" data-cat="card">
+						<div class="portfolio-wrapper">			
+							<img src="images/portfolio_pic4.jpg" alt="" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Typography Company</a>
+									<span class="text-category">Business card</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>	
+								
+					<div class="portfolio all app" data-cat="app">
+						<div class="portfolio-wrapper">
+							<img src="images/portfolio_pic5.jpg" alt="" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Weatherette</a>
+									<span class="text-category">App</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>			
+					
+					<div class="portfolio all card" data-cat="card">
+						<div class="portfolio-wrapper">			
+							<img src="images/portfolio_pic6.jpg" alt="" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">BMF</a>
+									<span class="text-category">Business card</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div>	
+					
+					<!-->div class="portfolio all card" data-cat="card">
+						<div class="portfolio-wrapper">			
+							<img src="images/portfolio_pic7.jpg" alt="" />
+							<div class="label">
+								<div class="label-text">
+									<a class="text-title">Techlion</a>
+									<span class="text-category">Business card</span>
+								</div>
+								<div class="label-bg"></div>
+							</div>
+						</div>
+					</div--->	
+					
+					<div class="stars-outer">
+						<div class="stars-inner"></div>
+					  </div>
+		<footer>
+			<div id="footer" class="fh5co-border-line">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<p>Copyright 2016 Free Html5 <a href="#">Agency</a>. All Rights Reserved. <br>Made with <i class="icon-heart3 love"></i> by <a href="http://freehtml5.co/" target="_blank">Freehtml5.co</a> / Demo Images: <a href="https://www.pexels.com/" target="_blank">Pexels</a> &amp; <a href="http://plmd.me/" target="_blank">PLMD</a> </p>
+						</div>
+						<div class="col-md-6 social-text-align">
+							<p class="fh5co-social-icons">
+								<a href="#"><i class="icon-twitter-with-circle"></i></a>
+								<a href="#"><i class="icon-facebook-with-circle"></i></a>
+								<a href="#"><i class="icon-instagram-with-circle"></i></a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	
+	</div>
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Portfolio Filter Mixitup -->
+	<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+
+	<!-- Main JS (Do not remove) -->
+	<script src="js/main.js"></script>
+
+	<script type="text/javascript">
+	$(function () {
+		
+		var filterList = {
+		
+			init: function () {
+			
+				// MixItUp plugin
+				// http://mixitup.io
+				$('#portfoliolist').mixItUp({
+  				selectors: {
+    			  target: '.portfolio',
+    			  filter: '.filter'	
+    		  },
+    		  load: {
+      		  filter: '.all'  
+      		}     
+				});								
+			
+			}
+
+		};
+		
+		// Run the show!
+		filterList.init();
+		ratings();
+		
+		
+	});	
+
+	function ratings(){
+		const ratings = {
+  hotel_a : 2.8,
+  hotel_b : 3.3,
+  hotel_c : 1.9,
+  hotel_d : 4.3,
+  hotel_e : 4.74
+};
+
+// total number of stars
+const starTotal = 5;
+
+for(const rating in ratings) {  
+  const starPercentage = (ratings[rating] / starTotal) * 100;
+  const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+  document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded; 
+}
+	}
+	</script>
+
+	</body>
+</html>
+
