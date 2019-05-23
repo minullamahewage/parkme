@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <title>Find Car Parks</title>
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="icon" href="assets/img/app-icon-transparent.png">
   <meta name="viewport" content="initial-scale=1.0, width=device-width" />
   <meta http-equiv="Content-Language" content="en">
       <link rel="stylesheet" href="assets/css/style.css">
@@ -77,7 +80,7 @@
     </script>
   </head>
   <body>
-  <div style="width: 640px; height: 700px" id="mapContainer"></div>
+  <div style="width: 640px; height: 780px" id="mapContainer"></div>
   <script src="map.js" type="text/javascript"></script>
       <div class="map-text-box">
                 <a class="btn btn-full" href="#" id="get-location-btn" onclick="getLocation()">Get Location </a> 

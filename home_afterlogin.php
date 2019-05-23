@@ -105,7 +105,7 @@ if (isset($_GET['q'])){
 							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
 								<h2>Find nearby <br />
 								Car Parks</h2>
-								<p>Minul Ayyah</p>
+								<p>Navigate to your nearest car park</p>
 								<ul class="actions special">
 								<li><a href="map.php" target="_blank" class="button primary">Find Car Parks</a></li>
 							</ul>
@@ -123,7 +123,7 @@ if (isset($_GET['q'])){
 							</header>
 							<ul class="features">
 								<li class="icon fa-heart-o">
-								<h2>Minul</h2>
+								<h2>TEST</h2>
 		
 									<span class="fa fa-star checked"></span>
 									<span class="fa fa-star checked"></span>
@@ -180,7 +180,7 @@ if (isset($_GET['q'])){
 							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 						</ul>
 						<ul class="copyright">
-							<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>&copy; ParkMe2019</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 						</ul>
 					</footer>
 
