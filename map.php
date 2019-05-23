@@ -7,6 +7,7 @@
   <meta name="viewport" content="initial-scale=1.0, width=device-width" />
   <meta http-equiv="Content-Language" content="en">
       <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="stylesheet" href="assets/css/overlay.css">
   <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
   type="text/javascript" charset="utf-8"></script>
   <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
@@ -14,7 +15,7 @@
 
   <?php
     require 'class.carpark.php';
-
+    //$park = new CarPark();
     //retreive data from the database into an array
     $cparray= array();
     for ($i=0; $i<7; $i++){
@@ -45,9 +46,18 @@
 			echo 'Registration failed. Email or Username already exits please try again';
 			}
 		}
-	}*/
+    }*/
+    
+    function navigateRe(){
+    echo '<script type="text/javascript">',
+     'navigate(cp.lat,cp.lng);',
+     'off();',
+     '</script>'
+                        ;
+    }
     ?>
     <script>
+        
         var cparray;
         //pass car park data to calculate distance and travel time
         function updateCarParks(){
@@ -88,12 +98,64 @@
                 
             </div>
             <div style="position: absolute; top:20px; left:800px; width:600px; height:600px">
-            <button class="btn-carpark disabled" id="carpark1-btn" onclick="navigate(cpAvailableArray[1][1], cpAvailableArray[1][2])"><span>Car Park 1<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
-            <button class="btn-carpark disabled" id="carpark2-btn" onclick="navigate(cpAvailableArray[2][1], cpAvailableArray[2][2])"><span>Car Park 2<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
-            <button class="btn-carpark disabled" id="carpark3-btn" onclick="navigate(cpAvailableArray[3][1], cpAvailableArray[3][2])"><span>Car Park 3<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
-            <button class="btn-carpark disabled" id="carpark4-btn" onclick="navigate(cpAvailableArray[4][1], cpAvailableArray[4][2])"><span>Car Park 4<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
-            <button class="btn-carpark disabled" id="carpark5-btn" onclick="navigate(cpAvailableArray[5][1], cpAvailableArray[5][2])"><span>Car Park 5<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
-            <button class="btn-carpark disabled" id="carpark6-btn" onclick="navigate(cpAvailableArray[6][1], cpAvailableArray[6][2])"><span>Car Park 6<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
+            <button class="btn-carpark disabled" id="carpark1-btn" onclick="navigateData(cpAvailableArray[1][1], cpAvailableArray[1][2])"><span>Car Park 1<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
+            <button class="btn-carpark disabled" id="carpark2-btn" onclick="navigateData(cpAvailableArray[2][1], cpAvailableArray[2][2])"><span>Car Park 2<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
+            <button class="btn-carpark disabled" id="carpark3-btn" onclick="navigateData(cpAvailableArray[3][1], cpAvailableArray[3][2])"><span>Car Park 3<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
+            <button class="btn-carpark disabled" id="carpark4-btn" onclick="navigateData(cpAvailableArray[4][1], cpAvailableArray[4][2])"><span>Car Park 4<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
+            <button class="btn-carpark disabled" id="carpark5-btn" onclick="navigateData(cpAvailableArray[5][1], cpAvailableArray[5][2])"><span>Car Park 5<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
+            <button class="btn-carpark disabled" id="carpark6-btn" onclick="navigateData(cpAvailableArray[6][1], cpAvailableArray[6][2])"><span>Car Park 6<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
             </div>
+
+
+            <div id="overlay">
+ <button  id = "navbtn" class="btn-carpark" onclick="navigateFuncRe()">Reserve and Start Navigation</button>
+  
+  <button id = "navbtn" class="btn-carpark" onclick="navigateFunc()">Start Navigation</button>
+</div>
+
+<div style="padding:20px">
+  <h2>Overlay with Text</h2>
+  <button onclick="on()">Turn on overlay effect</button>
+</div>
+
+<script>
+var cp = {};
+
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function navigateData(cplat,cplng){
+    cp.lat = cplat;
+    cp.lng = cplng;
+    on();
+    
+}
+
+
+
+
+function navigateFunc(){
+    navigate(cp.lat,cp.lng);
+    off();
+
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+function navigateFuncRe(){
+
+navigate(cp.lat,cp.lng);
+off();
+
+
+}
+
+
+
+</script>
+   
+
   </body>
 </html>

@@ -109,5 +109,38 @@ include "db_config.php";
 	        session_destroy();
         }*/
 
+	
+		public function book_carPark($lat,$lng){
+			echo $lat;
+				$sql2="UPDATE carparks SET cpavailable=cpavailable-1 WHERE cplat='$lat' and cplng='$lng'";
+				$result2 = mysqli_query($this->db,$sql2) or die(mysqli_connect_errno()."Data cannot be inserted");
+	            return true;
+
+
+
+		}
+
+		public function book_carPark1($parkName){
+			$sql1="SELECT cpavailable FROM carparks WHERE cpname='$parkName'";
+			//$result1=mysqli_query($this->db,$sql1);
+			$dbValues=$this->db->query($sql1);
+			$rowCount=$dbValues->num_rows;
+			if($rowCount!=0){
+				while($row = $dbValues->fetch_assoc()) {
+					$available=$row["cpavailable"];
+					if($available==0){
+							echo '<script language="javascript">';
+							echo 'alert("No Slots Available!!")';
+							echo '</script>';
+					}else{
+							$sql2="UPDATE carparks SET cpavailable=cpavailable-1,cpbooked=cpbooked+1 WHERE cpname='$parkName'";
+							$result2 = mysqli_query($this->db,$sql2) or die(mysqli_connect_errno()."Data cannot be inserted");
+							return $result2;
+					}
+				}
+			}
+			
+		}
 	}
+
 ?>
