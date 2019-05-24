@@ -158,6 +158,14 @@ include "db_config.php";
 			}
 			
 		}
+
+		public function updating($id, $available, $booked){
+	
+			$sql2="UPDATE carparks SET cpavailable='$available',cpbooked='$booked' WHERE cpid='$id'";
+			$result2 = mysqli_query($this->db,$sql2) or die(mysqli_connect_errno()."Data cannot be inserted");
+
+
+		}
 	}
 
 ?>

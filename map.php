@@ -150,10 +150,7 @@
 </div>
       </form>
 
-<div style="padding:20px">
-  <h2>Overlay with Text</h2>
-  <button onclick="on()">Turn on overlay effect</button>
-</div>
+
 
 <script>
 var cp = {};
