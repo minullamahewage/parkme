@@ -37,7 +37,7 @@
 									<div id="menu">
 										<ul>
 											<li><a href="index.html">Home</a></li>
-											<li><a href="parks.html">Parks</a></li>
+											<li><a href="mapParks.php">Parks</a></li>
 											<li><a href="registration.php">Sign Up</a></li>
 											<li><a href="login.php">Login</a></li>
 											<li><a href="reviews.php">Reviews</a></li>

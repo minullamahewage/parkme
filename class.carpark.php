@@ -110,13 +110,30 @@ include "db_config.php";
         }*/
 
 	
-		public function book_carPark($lat,$lng){
-			echo $lat;
-				$sql2="UPDATE carparks SET cpavailable=cpavailable-1 WHERE cplat='$lat' and cplng='$lng'";
+		public function book_carPark($id){
+			//$message = $lat;
+         // echo $lat,$lng;
+				$sql2="UPDATE carparks SET cpavailable=cpavailable-1,cpbooked=cpbooked+1 WHERE cpid='$id'";
 				$result2 = mysqli_query($this->db,$sql2) or die(mysqli_connect_errno()."Data cannot be inserted");
-	            return true;
+				//echo mysqli_errno($this->db);
+				return true;
+				
+			//$sql2="SELECT cpname from carparks WHERE cpid='$id'";
 
+			//checking if the username is available in the table
+        	//$result = mysqli_query($this->db,$sql2);
+        	//$user_data = mysqli_fetch_array($result);
+        	//$count_row = $result->num_rows;
+			//echo $count_row;
+	        //if ($count_row == 1) {
+	            // this login var will use for the session thing
+	            //echo "<script type='text/javascript'>alert('yeahhhhs');</script>";
+	            //return true;
 
+			//}else{
+				
+			//	echo mysqli_errno($this->db);
+			///}
 
 		}
 

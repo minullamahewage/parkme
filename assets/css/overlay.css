@@ -18,3 +18,8 @@ top: 25%;
 left: 25%;
 
 }
+
+#parkDetails{
+
+  display: none;
+}
