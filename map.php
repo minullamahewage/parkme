@@ -144,7 +144,7 @@
             </div>
 
             <div id="overlay">
- <button  id = "navbtn" class="btn-carpark" onclick="" type = "submit" name = "submit">Reserve and Start Navigation</button>
+ <button  id = "navbtn" class="btn-carpark" onclick="navigateFunc()" type = "submit" name = "submit">Reserve and Start Navigation</button>
   
   <button id = "navbtn" class="btn-carpark" onclick="navigateFunc()">Start Navigation</button>
 </div>
