@@ -134,7 +134,7 @@ if ($result = $mysqli->query($query)) {
                     <div class="input-group input-group-icon">
 						<input type="number" placeholder="Booked Slots" id="cpbooked" name="cpbooked"/>	
                     </div>
-					<div class="input-group">
+					<div class="input-group input-group-submit">
 						<input type="submit" name="submit" value="Submit" id="btn_submit" onclick="off();"/>
 						<label for="btn_submit"></label>
 					</div>
