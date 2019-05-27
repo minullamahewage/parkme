@@ -4,8 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/messages-style.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/util.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/overlay.css">
+
 </head>
 <body>
 <?php 
@@ -41,7 +43,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
 $query = "SELECT * FROM contactform";
  
  
-echo '<table border="0" cellspacing="2" cellpadding="2"> 
+echo '<table class="gridtable" border="0" cellspacing="2" cellpadding="2"> 
     
       <tr> 
           <td> <font face="Arial">ID</font> </td> 
@@ -77,7 +79,7 @@ $query = "SELECT * FROM carparks";
  
 
 
-echo '<table border="0" cellspacing="2" cellpadding="2"> 
+echo '<table class= "gridtable" border="0" cellspacing="2" cellpadding="2"> 
     
       <tr> 
           <td> <font face="Arial">Car Park ID</font> </td> 
@@ -115,45 +117,31 @@ if ($result = $mysqli->query($query)) {
 } 
 ?>
 
-<a href = "home_afterlogin.php">Go to Home</a>
-
-
-<div>
-<button name="update" value="Update database"  onclick = "on() ">Update database</button></div>
+<div class="btn-group">
+    <button href = "home_afterlogin.php">Go to Home</button>
+    <button class="btn-update" name="update" value="Update database"  onclick = "on() ">Update database</button>
+</div>
  
 <div id = "overlay">
+    <div class="limiter">
 				<form class="" method="post" action="" name="carParks">
-				
-
 					<div class="input-group input-group-icon">
-						<input type="number" placeholder="Car Park ID" id="cpid" name="cpid"/>
-						<div class="input-icon"><i class="fa fa-envelope"></i>
-						</div>
+						<input type="number" placeholder="Car Park ID" id="cpid" name="cpid"/>	
 					</div>
 					<div class="input-group input-group-icon">
-						<input type="number" placeholder="Available Slots" id="cpavailable" name="cpavailable"/>
-						<div class="input-icon"><i class="fa fa-lock"></i>
-						</div>
+						<input type="number" placeholder="Available Slots" id="cpavailable" name="cpavailable"/>	
                     </div>
                     <div class="input-group input-group-icon">
-						<input type="number" placeholder="Booked Slots" id="cpbooked" name="cpbooked"/>
-						<div class="input-icon"><i class="fa fa-lock"></i>
-						</div>
+						<input type="number" placeholder="Booked Slots" id="cpbooked" name="cpbooked"/>	
                     </div>
-                    
-
 					<div class="input-group">
 						<input type="submit" name="submit" value="Submit" id="btn_submit" onclick="off();"/>
 						<label for="btn_submit"></label>
 					</div>
-
-					
 					</div>
-				</form>
-			</div>
-
-
-
+                </form>
+            </div>
+		</div>
             <script>
             
             function on() {
