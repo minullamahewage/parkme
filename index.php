@@ -12,7 +12,7 @@
 		<meta http-equiv="Content-Language" content="en">
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/noscript.css" />
-		<link rel="icon" href="assets/img/app-icon-transparent.png">
+		<link rel="icon" href="assets/graphics/app-icon-transparent.png">
 
 
 
@@ -38,10 +38,10 @@
 										<ul>
 											<li><a href="index.html">Home</a></li>
 											<li><a href="mapParks.php">Parks</a></li>
-											<li><a href="registration.php">Sign Up</a></li>
-											<li><a href="login.php">Login</a></li>
-											<li><a href="reviews.php">Reviews</a></li>
-											<li><a href="about.html">About us</a></li>
+											<li><a href="User/registration.php">Sign Up</a></li>
+											<li><a href="User/login.php">Login</a></li>
+											<!--li><a href="reviews.php">Reviews</a></li-->
+											<li><a href="Interface/about.html">About us</a></li>
 
 										</ul>
 									</div>
@@ -53,13 +53,13 @@
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
-						<h1><img src="assets/img/app-icon-transparent.png" alt="login-logo" class="app-logo"><h1>
+						<h1><img src="assets/graphics/app-icon-transparent.png" alt="login-logo" class="app-logo"><h1>
 						  <h2>Park Me</h2>
 							<p>The smart parking app<br />
 							for your need<br />
 					      <strong>park me</strong></p>
 							<ul class="actions special">
-								<li><a href="login.php" class="button primary">Login</a></li>
+								<li><a href="User/login.php" class="button primary">Login</a></li>
 							</ul>
 						</div>
 
