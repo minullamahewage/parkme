@@ -19,15 +19,18 @@
     
     $park = new CarPark();
     $uemail = $_SESSION['uemail'];
-
+    
     echo "$uemail";
     if ( $_SERVER[ 'REQUEST_METHOD' ] === 'GET' ) {
       if ( isset( $_REQUEST[ 'submit' ] ) ) {
         extract( $_REQUEST );
         if($booked == "yes"){
           $booking = $park->book_carPark($id,$uemail);
+          header('Location: ../Park/booking_details.php');
+          
         }else{
           $booking = $park->navigate_carPark($id,$uemail);;
+          header('Location: ../Interface/home_afterlogin .php');
         }
         
         
@@ -37,6 +40,8 @@
         }else{
           echo "<script type='text/javascript'>alert('Booking Error. Try Again or Just Navigate.');</script>";
         }
+
+
          
       }
     }

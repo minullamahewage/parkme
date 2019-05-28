@@ -13,6 +13,7 @@
 <?php
 		session_start();
 require '../User/class.user.php';
+
 $user = new User();
 $uemail = $_SESSION['uemail'];
 
@@ -105,7 +106,7 @@ if (isset($_GET['q'])){
 								Car Parks</h2>
 								<p>Navigate to your nearest car park</p>
 								<ul class="actions special">
-								<li><a href="../Map/map.php" target="_blank" class="button primary">Find Car Parks</a></li>
+								<li><a href="../Map/map.php"  class="button primary">Find Car Parks</a></li>
 							</ul>
 							</div>
 						</section>

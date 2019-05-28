@@ -13,7 +13,21 @@
 <?php 
 session_start();
 
-require '../Park/class.carpark.php';
+require_once '../Park/class.carpark.php';
+$park = new CarPark();
+
+$uemail = $_SESSION['uemail'];
+echo $uemail;
+
+if($uemail != "admin@parkme.lk"){
+    //echo "<script type='text/javascript'>alert('Login as a admin to complete this step.');</script>";
+    header("location:../User/login.php");
+}
+
+
+
+
+
 $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE); 
 if(mysqli_connect_errno()) {
     echo "Error: Could not connect to database.";
@@ -22,7 +36,6 @@ if(mysqli_connect_errno()) {
 
 
 
-$park = new CarPark();
 if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
     if ( isset( $_REQUEST[ 'submit' ] ) ) {
         extract( $_REQUEST );
@@ -167,7 +180,7 @@ if ($result = $mysqli->query($query)) {
     <button class="btn-update" name="update" value="Update database"  onclick = "on() ">Update database</button>
 </div>
  
-<div id = "overlay" onclick = "off()">
+<div id = "overlay" >
     <div class="limiter">
 				<form class="" method="post" action="" name="carParks">
 					<div class="input-group input-group-icon">
