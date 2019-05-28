@@ -38,7 +38,7 @@ include "../Config/db_config.php";
 			//echo $uemail;
         	$upass = md5($upass);
 			
-			$sql2="SELECT uemail from users WHERE uemail='$uemail' and upass='$upass'";
+			$sql2="SELECT * from users WHERE uemail='$uemail' and upass='$upass'";
 
 			//checking if the username is available in the table
         	$result = mysqli_query($this->db,$sql2);
@@ -48,7 +48,8 @@ include "../Config/db_config.php";
 	        if ($count_row == 1) {
 	            // this login var will use for the session thing
 	            $_SESSION['login'] = true;
-	            $_SESSION['uemail'] = $user_data['uemail'];
+				$_SESSION['uemail'] = $user_data['uemail'];
+				$_SESSION['ufname'] = $user_data['ufname'];
 	            return true;
 	        }
 	        else{
@@ -60,7 +61,8 @@ include "../Config/db_config.php";
     	public function get_fullname($uemail){
     		$sql3="SELECT ufname FROM users WHERE uemail = '$uemail'";
 	        $result = mysqli_query($this->db,$sql3);
-	        $user_data = mysqli_fetch_array($result);
+			$user_data = mysqli_fetch_array($result);
+			
 	        return $user_data['ufname'];
     	}
 

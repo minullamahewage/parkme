@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="../assets/css/style.css">
 	
 	<link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-	<link rel="icon" href="../assets/graphics/app-icon-transparent.png">
+	<link rel="icon"   href="../assets/graphics/app-icon-transparent.png">
 	<?php
 	session_start();
 	require 'class.user.php';
@@ -76,7 +76,7 @@ function showpass(obj){
 						Welcome
 					</span>
 				
-					<img src="assets/img/app-icon-transparent.png" alt="login-logo" class="app-logo">
+					<img src="../assets/graphics/app-icon-transparent.png" alt="login-logo" class="app-logo">
 					<div class="input-group input-group-icon">
 						<input type="email" placeholder="Email" id="emailID" name="uemail"/>
 						<div class="input-icon"><i class="fa fa-envelope"></i>
