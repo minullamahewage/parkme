@@ -60,6 +60,7 @@ input[type="button"]:focus{
   color: #fff;
   border-color:  #d35400;
 }
+
 table.gridtable{
     font-family: sans-serif;
     font-size: 20px;

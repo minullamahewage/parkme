@@ -56,7 +56,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
             echo "<script type='text/javascript'>alert('$message');</script>";
         }
     }
-$query = "SELECT * FROM contactform";
+$query = "SELECT * FROM contactform ORDER BY eid DESC LIMIT 5";
  
  
 echo '<table class="gridtable" border="0" cellspacing="2" cellpadding="2"> 
@@ -132,7 +132,7 @@ if ($result = $mysqli->query($query)) {
     $result->free();
 } 
 
-$query = "SELECT * FROM navigations";
+$query = "SELECT * FROM navigations ORDER BY id DESC";
  
  
 echo '<table class="gridtable" border="0" cellspacing="2" cellpadding="2"> 
