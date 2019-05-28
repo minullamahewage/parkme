@@ -1,10 +1,13 @@
 <html>
 <head>
 <title>Control Panel</title>
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+		<link rel="icon" href="../assets/graphics/app-icon-transparent.png">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="../assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/messages-style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/util.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/overlay.css">
 
@@ -176,8 +179,8 @@ if ($result = $mysqli->query($query)) {
 
 <div class="btn-group">
     <button onclick="window.open('../Interface/home_afterlogin.php')">Go to Home</button>
-    <button onclick="window.open('../Parks/ParkRegistration.php')">Register a new Car Park</button>
-    <button class="btn-update" name="update" value="Update database"  onclick = "on() ">Update database</button>
+    <button class="btn-group btn-register" onclick="window.open('../Parks/ParkRegistration.php')">Register a new Car Park</button>
+    <button  name="update" value="Update database"  onclick = "on() ">Update database</button>
 </div>
  
 <div id = "overlay" >
