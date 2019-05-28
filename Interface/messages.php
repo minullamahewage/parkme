@@ -179,7 +179,7 @@ if ($result = $mysqli->query($query)) {
 
 <div class="btn-group">
     <button onclick="window.open('../Interface/home_afterlogin.php')">Go to Home</button>
-    <button class="btn-group btn-register" onclick="window.open('../Parks/ParkRegistration.php')">Register a new Car Park</button>
+    <button class="btn-group btn-register" onclick="window.open('../Park/ParkRegistration.php')">Register a new Car Park</button>
     <button  name="update" value="Update database"  onclick = "on() ">Update database</button>
 </div>
  

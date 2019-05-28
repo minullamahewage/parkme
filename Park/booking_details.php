@@ -98,7 +98,7 @@ if ($result = $mysqli->query($query)) {
 
 <div class="btn-group">
     <button onclick="window.open('../Contact/contact-us.php')">Contact us</button>
-    <button onclick="window.open('../Inetrface/home_afterlogin.php')">Home</button>
+    <button onclick="window.open('../Interface/home_afterlogin.php')">Home</button>
     <form class="" method="post" action="" name="carParks">
 			
             <div class="input-group input-group-submit">
