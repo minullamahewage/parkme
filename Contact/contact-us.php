@@ -66,7 +66,7 @@ if(isset($_POST['submit'])){
       <input name="mail" placeholder="Your Email Address" type="email" tabindex="2" required>
     </fieldset>
     <fieldset>
-      <input name="phone" placeholder="Your Phone Number (optional)" type="tel" tabindex="3" required>
+      <input name="phone" placeholder="Your Phone Number (optional) format: 012-345-6789" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
     </fieldset>
     <fieldset>
       <input name="subject" placeholder="Subject" type="text" tabindex="4" required>

@@ -55,7 +55,7 @@ if (isset($_GET['q'])){
 									?>
 									<div id="menu">
 										<ul>
-											<li><a href="../index.html">Home</a></li>
+											<li><a href="#">Home</a></li>
 											<li><a href="parks.php">Parks</a></li>
 											<!--li><a href="registration.php">Sign Up</a></li-->
 											<li><a href="home_afterlogin.php?q=logout">Logout</a></li>
@@ -163,7 +163,7 @@ if (isset($_GET['q'])){
 								<p>Would you like to join with us. It‘s free to list and only takes a few minutes to get up and running.</p>
 							</header>
 							<ul class="actions stacked">
-								<li><a href="contact-us.php" class="button fit primary">Contact Us</a></li>
+								<li><a href="../Contact/contact-us.php" class="button fit primary">Contact Us</a></li>
 								<li><a href="#" class="button fit">Learn More</a></li>
 							</ul>
 						</div>

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/util.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/overlay.css">
-
+    <link rel="icon" href="../assets/graphics/app-icon-transparent.png">
 </head>
 <body>
 <?php 
