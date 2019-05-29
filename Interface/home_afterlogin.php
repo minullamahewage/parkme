@@ -204,7 +204,7 @@ if (isset($_GET['q'])){
 							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 						</ul>
 						<ul class="copyright">
-							<li>&copy; ParkMe2019</li><li>Design: <a href="">CODE WIZARDS</a></li>
+							<li>&copy; ParkMe2019</li><li>Design: <a href=""><img src="../assets/graphics/codewizards_w.png" alt="login-logo" style="width: 150px;"></a></li>
 						</ul>
 					</footer>
 
