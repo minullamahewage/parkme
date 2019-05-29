@@ -6,6 +6,7 @@
 		<link rel="icon" href="../assets/graphics/app-icon-transparent.png">
   <meta name="viewport" content="initial-scale=1.0, width=device-width" />
   <meta http-equiv="Content-Language" content="en">
+  <link rel="stylesheet" href="../assets/css/maps-style.css">
       <link rel="stylesheet" href="../assets/css/style.css">
       <link rel="stylesheet" href="../assets/css/overlay.css">
   <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
