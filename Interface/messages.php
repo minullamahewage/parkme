@@ -16,6 +16,7 @@
     <button onclick="window.open('../Interface/home_afterlogin.php')">Go to Home</button>
     <button class="btn-group btn-register" onclick="window.open('../Park/ParkRegistration.php')">Register a new Car Park</button>
     <button  name="update" value="Update database"  onclick = "on() ">Update database</button>
+    <button onclick="window.open('../Interface/contact_messages.php')">Messages</button>
 </div>
 <body>
 <?php 
@@ -61,39 +62,6 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
             echo "<script type='text/javascript'>alert('$message');</script>";
         }
     }
-$query = "SELECT * FROM contactform ORDER BY eid DESC";
- 
- 
-echo '<table class="gridtable" border="0" cellspacing="2" cellpadding="2"> 
-    
-      <tr> 
-          
-          <td> <font face="Arial">Name</font> </td> 
-          <td> <font face="Arial">email</font> </td> 
-          <td> <font face="Arial">Phone</font> </td> 
-          <td> <font face="Arial">Message</font> </td> 
-      </tr>';
- 
-if ($result = $mysqli->query($query)) {
-    while ($row = $result->fetch_assoc()) {
-        
-        $field2name = $row["ename"];
-        $field3name = $row["eemail"];
-        $field4name = $row["ephone"];
-        $field5name = $row["emessage"]; 
- 
-        echo '
-            <
-            <tr> 
-                  
-                  <td>'.$field2name.'</td> 
-                  <td>'.$field3name.'</td> 
-                  <td>'.$field4name.'</td> 
-                  <td>'.$field5name.'</td> 
-              </tr>';
-    }
-    $result->free();
-} 
 
 
 $query = "SELECT * FROM carparks";
