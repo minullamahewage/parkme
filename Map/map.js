@@ -17,7 +17,7 @@ var platform = new H.service.Platform({
     });
     //var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
     // Create a marker icon from an image URL:
-    var icon = new H.map.Icon('assets/graphics/parksymbol1.png');
+    var icon = new H.map.Icon('../assets/graphics/app-icon-transparent.png', {size:{w:30 ,h:35}});
 
     // Create a marker using the previously instantiated icon:
     var cpmarker1 = new H.map.Marker({ lat: 6.91175, lng: 79.8514 }, { icon: icon });
