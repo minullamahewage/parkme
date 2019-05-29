@@ -187,13 +187,13 @@ if ($result = $mysqli->query($query)) {
     <div class="limiter">
 				<form class="" method="post" action="" name="carParks">
 					<div class="input-group input-group-icon">
-						<input type="number" placeholder="Car Park ID" id="cpid" name="cpid"/>	
+						<input type="number" placeholder="Car Park ID" id="cpid" name="cpid" min = "0" />	
 					</div>
 					<div class="input-group input-group-icon">
-						<input type="number" placeholder="Available Slots" id="cpavailable" name="cpavailable"/>	
+						<input type="number" placeholder="Available Slots" id="cpavailable" name="cpavailable" min="0"/>	
                     </div>
                     <div class="input-group input-group-icon">
-						<input type="number" placeholder="Booked Slots" id="cpbooked" name="cpbooked"/>	
+						<input type="number" placeholder="Booked Slots" id="cpbooked" name="cpbooked" min="0"/>	
                     </div>
 					<div class="input-group input-group-submit">
 						<input type="submit" name="submit" value="Submit" id="btn_submit" onclick="off();"/>

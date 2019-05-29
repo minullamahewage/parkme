@@ -201,7 +201,7 @@ include "../Config/db_config.php";
 			
 
 				
-				
+				date_default_timezone_set('Asia/Colombo');
 
 				$date_time = date('Y-m-d H:i:s');
 
