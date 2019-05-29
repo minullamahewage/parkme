@@ -132,7 +132,7 @@
                 <a class="btn btn-ghost disabled"  href="#" id="carkpark-info" onclick="updateCarParks()">Carpark Info</a>
                 
             </div>
-            <div style="position: absolute; top:20px; left:800px; width:600px; height:600px">
+            <div style="position: absolute; top:40px; left:800px; width:600px; height:600px">
             <button class="btn-carpark disabled" id="carpark1-btn" onclick="navigateData(cpAvailableArray[1][0], cpAvailableArray[1][1], cpAvailableArray[1][2])"><span>Car Park 1<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
             <button class="btn-carpark disabled" id="carpark2-btn" onclick="navigateData(cpAvailableArray[2][0], cpAvailableArray[2][1], cpAvailableArray[2][2])"><span>Car Park 2<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
             <button class="btn-carpark disabled" id="carpark3-btn" onclick="navigateData(cpAvailableArray[3][0], cpAvailableArray[3][1], cpAvailableArray[3][2])"><span>Car Park 3<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>

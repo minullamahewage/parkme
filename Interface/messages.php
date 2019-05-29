@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/util.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/overlay.css">
-
+    <link rel="icon" href="../assets/graphics/app-icon-transparent.png">
 </head>
 <body>
 <?php 
@@ -56,7 +56,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
             echo "<script type='text/javascript'>alert('$message');</script>";
         }
     }
-$query = "SELECT * FROM contactform";
+$query = "SELECT * FROM contactform ORDER BY eid DESC LIMIT 5";
  
  
 echo '<table class="gridtable" border="0" cellspacing="2" cellpadding="2"> 
@@ -132,7 +132,7 @@ if ($result = $mysqli->query($query)) {
     $result->free();
 } 
 
-$query = "SELECT * FROM navigations";
+$query = "SELECT * FROM navigations ORDER BY id DESC";
  
  
 echo '<table class="gridtable" border="0" cellspacing="2" cellpadding="2"> 
@@ -179,7 +179,7 @@ if ($result = $mysqli->query($query)) {
 
 <div class="btn-group">
     <button onclick="window.open('../Interface/home_afterlogin.php')">Go to Home</button>
-    <button class="btn-group btn-register" onclick="window.open('../Parks/ParkRegistration.php')">Register a new Car Park</button>
+    <button class="btn-group btn-register" onclick="window.open('../Park/ParkRegistration.php')">Register a new Car Park</button>
     <button  name="update" value="Update database"  onclick = "on() ">Update database</button>
 </div>
  

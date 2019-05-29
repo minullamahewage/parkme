@@ -6,7 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="../assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/util.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/table.css">
-    
+    <link rel="icon" href="../assets/graphics/app-icon-transparent.png">
+    <link rel="stylesheet" href="../assets/css/parks-style.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/overlay.css">
 </head>
 <body>
@@ -21,7 +22,7 @@ $query = "SELECT * FROM carparks";
  
 
 
-echo '<table border="0" cellspacing="2" cellpadding="2"> 
+echo '<table class="gridtable" border="0" cellspacing="2" cellpadding="2"> 
     
       <tr> 
           <td> <font face="Arial">Car Park ID</font> </td> 
@@ -58,8 +59,8 @@ if ($result = $mysqli->query($query)) {
     $result->free();
 } 
 ?>
-
-<a href = "../Interface/home_afterlogin.php">Go to Home</a>
-
+<div class="btn-group">
+<button class="btn-group"  onclick="window.open('../Interface/home_afterlogin.php')"">Go to Home</button>
+</div>
 </body>
 </html>
