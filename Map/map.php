@@ -30,7 +30,7 @@
           
         }else{
           $booking = $park->navigate_carPark($id,$uemail);;
-          header('Location: ../Interface/home_afterlogin .php');
+          header('Location: ../Park/navigation_details .php');
         }
         
         
