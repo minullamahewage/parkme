@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Control Panel</title>
+<title>Car Park Details</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="../assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -24,7 +24,7 @@ $query = "SELECT * FROM carparks";
 
 echo '<table class="gridtable" border="0" cellspacing="2" cellpadding="2"> 
     
-      <tr> 
+      <tr > 
           <td> <font face="Arial">Car Park ID</font> </td> 
           <td> <font face="Arial">Car Park Name</font> </td> 
           <td> <font face="Arial">Latitude</font> </td> 
@@ -60,7 +60,7 @@ if ($result = $mysqli->query($query)) {
 } 
 ?>
 <div class="btn-group">
-<button class="btn-group"  onclick="window.open('../Interface/home_afterlogin.php')"">Go to Home</button>
+<button class="btn-group"  onclick="window.open('../Interface/home_afterlogin.php')">Go to Home</button>
 </div>
 </body>
 </html>

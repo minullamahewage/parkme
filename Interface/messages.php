@@ -12,6 +12,14 @@
 	<link rel="stylesheet" type="text/css" href="../assets/css/overlay.css">
     <link rel="icon" href="../assets/graphics/app-icon-transparent.png">
 </head>
+<div class="btn-group">
+ 
+                    <img src="../assets/graphics/codewizards.png" alt="login-logo" class="app-logo">
+    <button onclick="window.open('../Interface/home_afterlogin.php')">Go to Home</button>
+    <button class="btn-group btn-register" onclick="window.open('../Park/ParkRegistration.php')">Register a new Car Park</button>
+    <button  name="update" value="Update database"  onclick = "on() ">Update database</button>
+    <button onclick="window.open('../Interface/contact_messages.php')">Messages</button>
+</div>
 <body>
 <?php 
 session_start();
@@ -56,39 +64,6 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
             echo "<script type='text/javascript'>alert('$message');</script>";
         }
     }
-$query = "SELECT * FROM contactform ORDER BY eid DESC LIMIT 5";
- 
- 
-echo '<table class="gridtable" border="0" cellspacing="2" cellpadding="2"> 
-    
-      <tr> 
-          <td> <font face="Arial">ID</font> </td> 
-          <td> <font face="Arial">Name</font> </td> 
-          <td> <font face="Arial">email</font> </td> 
-          <td> <font face="Arial">Phone</font> </td> 
-          <td> <font face="Arial">Message</font> </td> 
-      </tr>';
- 
-if ($result = $mysqli->query($query)) {
-    while ($row = $result->fetch_assoc()) {
-        $field1name = $row["eid"];
-        $field2name = $row["ename"];
-        $field3name = $row["eemail"];
-        $field4name = $row["ephone"];
-        $field5name = $row["emessage"]; 
- 
-        echo '
-            <
-            <tr> 
-                  <td>'.$field1name.'</td> 
-                  <td>'.$field2name.'</td> 
-                  <td>'.$field3name.'</td> 
-                  <td>'.$field4name.'</td> 
-                  <td>'.$field5name.'</td> 
-              </tr>';
-    }
-    $result->free();
-} 
 
 
 $query = "SELECT * FROM carparks";
@@ -119,7 +94,7 @@ if ($result = $mysqli->query($query)) {
  
         echo '
             <
-            <tr> 
+            <tr>  
                   <td>'.$field1name.'</td> 
                   <td>'.$field2name.'</td> 
                   <td>'.$field3name.'</td> 
@@ -133,14 +108,13 @@ if ($result = $mysqli->query($query)) {
 } 
 
 $query = "SELECT * FROM navigations ORDER BY id DESC";
- 
- 
+
 echo '<table class="gridtable" border="0" cellspacing="2" cellpadding="2"> 
     
       <tr> 
-          <td> <font face="Arial">Id</font> </td> 
+          <td> <font face="Arial">ID</font> </td> 
           <td> <font face="Arial">Name</font> </td> 
-          <td> <font face="Arial">email</font> </td> 
+          <td> <font face="Arial">Email</font> </td> 
           <td> <font face="Arial">Date and Time</font> </td> 
           <td> <font face="Arial">Car Park Name</font> </td> 
           <td> <font face="Arial">Car Park Id</font> </td> 
@@ -160,9 +134,7 @@ if ($result = $mysqli->query($query)) {
         $field7name = $row["booked"]; 
         $field8name = $row["cancelled"]; 
  
-        echo '
-            <
-            <tr> 
+        echo '<tr> 
                   <td>'.$field1name.'</td> 
                   <td>'.$field2name.'</td> 
                   <td>'.$field3name.'</td> 
@@ -177,11 +149,7 @@ if ($result = $mysqli->query($query)) {
 } 
 ?>
 
-<div class="btn-group">
-    <button onclick="window.open('../Interface/home_afterlogin.php')">Go to Home</button>
-    <button class="btn-group btn-register" onclick="window.open('../Park/ParkRegistration.php')">Register a new Car Park</button>
-    <button  name="update" value="Update database"  onclick = "on() ">Update database</button>
-</div>
+
  
 <div id = "overlay" >
     <div class="limiter">

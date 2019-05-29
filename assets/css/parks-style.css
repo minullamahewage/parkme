@@ -68,6 +68,7 @@ table.gridtable{
     border-color: #2c3e50;
     border-collapse: collapse;
 }
+
 table.gridtable tr{
 
     border-width: 1px;

@@ -10,7 +10,7 @@ include "../Config/db_config.php";
 		public $cptotal;
 		public $cpbooked;
 		public $cpid;
-
+		public $rating;
 		public function __construct(){
 
 			if ($this->db == null){
@@ -52,6 +52,7 @@ include "../Config/db_config.php";
 			$sql3="SELECT cpavailable from carparks WHERE cpid='$cpid'";
 			$sql4="SELECT cptotal from carparks WHERE cpid='$cpid'";
 			$sql5="SELECT cpbooked from carparks WHERE cpid='$cpid'";
+			$sql6="SELECT rating from carparks WHERE cpid='$cpid'";
 
             //checking if the username is available in the table
             //getting latitude
@@ -68,7 +69,10 @@ include "../Config/db_config.php";
 			$user_datatotal = mysqli_fetch_array($result4);
 			//getting booked slots
 			$result5 = mysqli_query($this->db,$sql5);
-        	$user_databooked = mysqli_fetch_array($result5);
+			$user_databooked = mysqli_fetch_array($result5);
+			//rating
+			$result6 = mysqli_query($this->db,$sql6);
+        	$user_datarating = mysqli_fetch_array($result6);
 			//$count_row = $result->num_rows;
 			
             $this->cplat=$user_datalat['cplat'];
@@ -76,7 +80,7 @@ include "../Config/db_config.php";
 			$this->cpavailable =$user_dataavailable['cpavailable'];
 			$this->cptotal=$user_datatotal['cptotal'];
 			$this->cpbooked=$user_databooked['cpbooked'];
-			
+			$this->rating=$user_datarating['rating'];
 
             //echo $this->cplat;
             //echo $this->cplng;
