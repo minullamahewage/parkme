@@ -224,7 +224,7 @@ include "../Config/db_config.php";
 		public function cancel_booking($id){
 				//echo "<script type='text/javascript'>alert('Doon');</script>";
 			
-			$sql6="SELECT cpid FROM navigations WHERE id='$id'";
+				$sql6="SELECT cpid FROM navigations WHERE id='$id'";
 				$result6 = mysqli_query($this->db,$sql6);
 				$row = $result6->fetch_assoc();
 				$park_id = $row["cpid"];
@@ -236,6 +236,21 @@ include "../Config/db_config.php";
 				$result8 = mysqli_query($this->db,$sql8);
 				return true;
 		}
+
+		public function update_rating($id,$val){
+			//echo "<script type='text/javascript'>alert('Rat');</script>";
+		
+		
+			
+			$sql8="UPDATE carparks SET rates=rates+$val,user_count=user_count+1 WHERE cpid='$id'";
+			$result8 = mysqli_query($this->db,$sql8)or die(mysqli_connect_errno()."Data cannot be inserted");
+
+			$sql9="UPDATE carparks SET rating=rates/user_count WHERE cpid='$id'";
+			$result9 = mysqli_query($this->db,$sql9)or die(mysqli_connect_errno()."Data cannot be inserted");
+			return true;
+	}
+
+
 	}
 
 ?>

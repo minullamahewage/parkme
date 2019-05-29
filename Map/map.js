@@ -46,12 +46,12 @@ var traveltime;
 var cp_var;
 var cparrayglobal;
 var testValue=0;
-//array 0 - cpid, 1 - distance, 2 - travel time, 3- cplat, 4 - cplng
+//array 0 - cpid, 1 - distance, 2 - travel time, 3- cplat, 4 - cplng, 5 - rating
 cpInfoArray = new Array();
 cpno=7;
 //Initialise carpark info array
 for(i=0;i<cpno;i++){
-    cpInfoArray[i]=new Array(i,0,0,0,0,0,0,0);
+    cpInfoArray[i]=new Array(i,0,0,0,0,0,0,0,0,0);
 }
 
 
