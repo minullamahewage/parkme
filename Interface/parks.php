@@ -24,7 +24,7 @@ $query = "SELECT * FROM carparks";
 
 echo '<table class="gridtable" border="0" cellspacing="2" cellpadding="2"> 
     
-      <tr> 
+      <tr > 
           <td> <font face="Arial">Car Park ID</font> </td> 
           <td> <font face="Arial">Car Park Name</font> </td> 
           <td> <font face="Arial">Latitude</font> </td> 

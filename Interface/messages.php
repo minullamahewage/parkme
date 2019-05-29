@@ -112,9 +112,9 @@ $query = "SELECT * FROM navigations ORDER BY id DESC";
 echo '<table class="gridtable" border="0" cellspacing="2" cellpadding="2"> 
     
       <tr> 
-          <td> <font face="Arial">Id</font> </td> 
+          <td> <font face="Arial">ID</font> </td> 
           <td> <font face="Arial">Name</font> </td> 
-          <td> <font face="Arial">email</font> </td> 
+          <td> <font face="Arial">Email</font> </td> 
           <td> <font face="Arial">Date and Time</font> </td> 
           <td> <font face="Arial">Car Park Name</font> </td> 
           <td> <font face="Arial">Car Park Id</font> </td> 
