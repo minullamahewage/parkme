@@ -71,6 +71,6 @@ if ($result = $mysqli->query($query)) {
 
 ?>
 <div class="btn-group">
-<img src="../assets/graphics/codewizards.png" alt="login-logo" class="app-logo">              
+<img src="../assets/graphics/codewizards_w.png" alt="login-logo" class="app-logo">              
     <button onclick="window.open('../Interface/home_afterlogin.php')">Go to Home</button>   
 </div>

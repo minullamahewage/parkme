@@ -156,8 +156,9 @@ if ($result = $mysqli->query($query)) {
   <option value="3">5</option>
 </select>
 <input type="submit" name="rating" value="Rate" id="btn_submit" onclick=""/>
+<button onclick = "off();">Cancel</Button>
 </form>
-<div onclick = "off();"></div>
+
         </div>
  
 
