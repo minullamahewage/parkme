@@ -13,6 +13,8 @@
     <link rel="icon" href="../assets/graphics/app-icon-transparent.png">
 </head>
 <div class="btn-group">
+ 
+                    <img src="../assets/graphics/codewizards.png" alt="login-logo" class="app-logo">
     <button onclick="window.open('../Interface/home_afterlogin.php')">Go to Home</button>
     <button class="btn-group btn-register" onclick="window.open('../Park/ParkRegistration.php')">Register a new Car Park</button>
     <button  name="update" value="Update database"  onclick = "on() ">Update database</button>
@@ -92,7 +94,7 @@ if ($result = $mysqli->query($query)) {
  
         echo '
             <
-            <tr> 
+            <tr>  
                   <td>'.$field1name.'</td> 
                   <td>'.$field2name.'</td> 
                   <td>'.$field3name.'</td> 
@@ -106,8 +108,7 @@ if ($result = $mysqli->query($query)) {
 } 
 
 $query = "SELECT * FROM navigations ORDER BY id DESC";
- 
- 
+
 echo '<table class="gridtable" border="0" cellspacing="2" cellpadding="2"> 
     
       <tr> 
