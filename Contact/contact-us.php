@@ -28,8 +28,8 @@ if(isset($_POST['submit'])){
     $save = $mail_db->save_mail($_POST['name'],$_POST['mail'],$_POST['phone'],$_POST['message']);
     if ($save) {
 			// Registration Success
-			//echo 'Registration successful <a href="login.php">Click here</a> to login';
-				header("location:index.php");;
+		//	echo 'Registration successful <a href="login.php">Click here</a> to login';
+				header("location:../index.php");;
 			} else {
 			// Registration Failed
 			echo 'Something went wrong';

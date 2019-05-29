@@ -12,6 +12,11 @@
 	<link rel="stylesheet" type="text/css" href="../assets/css/overlay.css">
     <link rel="icon" href="../assets/graphics/app-icon-transparent.png">
 </head>
+<div class="btn-group">
+    <button onclick="window.open('../Interface/home_afterlogin.php')">Go to Home</button>
+    <button class="btn-group btn-register" onclick="window.open('../Park/ParkRegistration.php')">Register a new Car Park</button>
+    <button  name="update" value="Update database"  onclick = "on() ">Update database</button>
+</div>
 <body>
 <?php 
 session_start();
@@ -56,13 +61,13 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
             echo "<script type='text/javascript'>alert('$message');</script>";
         }
     }
-$query = "SELECT * FROM contactform ORDER BY eid DESC LIMIT 5";
+$query = "SELECT * FROM contactform ORDER BY eid DESC";
  
  
 echo '<table class="gridtable" border="0" cellspacing="2" cellpadding="2"> 
     
       <tr> 
-          <td> <font face="Arial">ID</font> </td> 
+          
           <td> <font face="Arial">Name</font> </td> 
           <td> <font face="Arial">email</font> </td> 
           <td> <font face="Arial">Phone</font> </td> 
@@ -71,7 +76,7 @@ echo '<table class="gridtable" border="0" cellspacing="2" cellpadding="2">
  
 if ($result = $mysqli->query($query)) {
     while ($row = $result->fetch_assoc()) {
-        $field1name = $row["eid"];
+        
         $field2name = $row["ename"];
         $field3name = $row["eemail"];
         $field4name = $row["ephone"];
@@ -80,7 +85,7 @@ if ($result = $mysqli->query($query)) {
         echo '
             <
             <tr> 
-                  <td>'.$field1name.'</td> 
+                  
                   <td>'.$field2name.'</td> 
                   <td>'.$field3name.'</td> 
                   <td>'.$field4name.'</td> 
@@ -160,9 +165,7 @@ if ($result = $mysqli->query($query)) {
         $field7name = $row["booked"]; 
         $field8name = $row["cancelled"]; 
  
-        echo '
-            <
-            <tr> 
+        echo '<tr> 
                   <td>'.$field1name.'</td> 
                   <td>'.$field2name.'</td> 
                   <td>'.$field3name.'</td> 
@@ -177,11 +180,7 @@ if ($result = $mysqli->query($query)) {
 } 
 ?>
 
-<div class="btn-group">
-    <button onclick="window.open('../Interface/home_afterlogin.php')">Go to Home</button>
-    <button class="btn-group btn-register" onclick="window.open('../Park/ParkRegistration.php')">Register a new Car Park</button>
-    <button  name="update" value="Update database"  onclick = "on() ">Update database</button>
-</div>
+
  
 <div id = "overlay" >
     <div class="limiter">
