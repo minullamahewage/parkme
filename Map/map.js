@@ -135,7 +135,7 @@ function getDistancesList(cparray){
                 cpInfoArray[index][3]=parseInt(cp[3],10);
                 cpInfoArray[index][4]=parseInt(cp[4],10);
                 cpInfoArray[index][5]=parseInt(cp[5],10);
-                cpInfoArray[index][6]=cp[6];
+                cpInfoArray[index][8]=cp[6];
                 getDistance(cp[1],cp[2],index);   
     } 
 }
@@ -188,12 +188,12 @@ function updateCarParkButtons(){
     console.log(cpInfoArray[4][0]+"- Distance: "+ cpInfoArray[4][6]+", Travel Time: "+cpInfoArray[4][7]);
     console.log(cpInfoArray[5][0]+"- Distance: "+ cpInfoArray[5][6]+", Travel Time: "+cpInfoArray[5][7]);
     console.log(cpInfoArray[6][0]+"- Distance: "+ cpInfoArray[6][6]+", Travel Time: "+cpInfoArray[6][7]);
-    document.getElementById("carpark1-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[1][0]+"<br/><p>Distance: "+ cpAvailableArray[1][6]+"km<br/>   Travel Time: "+(cpAvailableArray[1][7]).toFixed(2)+"min<br/>  Available Slots: "+cpAvailableArray[1][3]+"<br/>  Booked: "+cpAvailableArray[1][5]+"</p></span>";
-    document.getElementById("carpark2-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[2][0]+"<br/><p>Distance: "+ cpAvailableArray[2][6]+"km<br/>   Travel Time: "+(cpAvailableArray[2][7]).toFixed(2)+"min<br/>  Available Slots: "+cpAvailableArray[2][3]+"<br/>  Booked: "+cpAvailableArray[2][5]+"</p></span>";
-    document.getElementById("carpark3-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[3][0]+"<br/><p>Distance: "+ cpAvailableArray[3][6]+"km<br/>   Travel Time: "+(cpAvailableArray[3][7]).toFixed(2)+"min<br/>  Available Slots: "+cpAvailableArray[3][3]+"<br/>  Booked: "+cpAvailableArray[3][5]+"</p></span>";
-    document.getElementById("carpark4-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[4][0]+"<br/><p>Distance: "+ cpAvailableArray[4][6]+"km<br/>   Travel Time: "+(cpAvailableArray[4][7]).toFixed(2)+"min<br/>  Available Slots: "+cpAvailableArray[4][3]+"<br/>  Booked: "+cpAvailableArray[4][5]+"</p></span>";
-    document.getElementById("carpark5-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[5][0]+"<br/><p>Distance: "+ cpAvailableArray[5][6]+"km<br/>   Travel Time: "+(cpAvailableArray[5][7]).toFixed(2)+"min<br/>  Available Slots: "+cpAvailableArray[5][3]+"<br/>  Booked: "+cpAvailableArray[5][5]+"</p></span>";
-    document.getElementById("carpark6-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[6][0]+"<br/><p>Distance: "+ cpAvailableArray[6][6]+"km<br/>   Travel Time: "+(cpAvailableArray[6][7]).toFixed(2)+"min<br/>  Available Slots: "+cpAvailableArray[6][3]+"<br/>  Booked: "+cpAvailableArray[6][5]+"</p></span>";
+    document.getElementById("carpark1-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[1][0]+"<br/><p>Distance: "+ cpAvailableArray[1][6]+"km<br/>   Travel Time: "+(cpAvailableArray[1][7]).toFixed(2)+"min<br/>  Available Slots: "+cpAvailableArray[1][3]+"<br/>  Booked: "+cpAvailableArray[1][5]+"<br/>  Rating: "+cpAvailableArray[1][8]+"/5</p></span>";
+    document.getElementById("carpark2-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[2][0]+"<br/><p>Distance: "+ cpAvailableArray[2][6]+"km<br/>   Travel Time: "+(cpAvailableArray[2][7]).toFixed(2)+"min<br/>  Available Slots: "+cpAvailableArray[2][3]+"<br/>  Booked: "+cpAvailableArray[2][5]+"<br/>  Rating: "+cpAvailableArray[2][8]+"/5</p></span>";
+    document.getElementById("carpark3-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[3][0]+"<br/><p>Distance: "+ cpAvailableArray[3][6]+"km<br/>   Travel Time: "+(cpAvailableArray[3][7]).toFixed(2)+"min<br/>  Available Slots: "+cpAvailableArray[3][3]+"<br/>  Booked: "+cpAvailableArray[3][5]+"<br/>  Rating: "+cpAvailableArray[3][8]+"/5</p></span>";
+    document.getElementById("carpark4-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[4][0]+"<br/><p>Distance: "+ cpAvailableArray[4][6]+"km<br/>   Travel Time: "+(cpAvailableArray[4][7]).toFixed(2)+"min<br/>  Available Slots: "+cpAvailableArray[4][3]+"<br/>  Booked: "+cpAvailableArray[4][5]+"<br/>  Rating: "+cpAvailableArray[4][8]+"/5</p></span>";
+    document.getElementById("carpark5-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[5][0]+"<br/><p>Distance: "+ cpAvailableArray[5][6]+"km<br/>   Travel Time: "+(cpAvailableArray[5][7]).toFixed(2)+"min<br/>  Available Slots: "+cpAvailableArray[5][3]+"<br/>  Booked: "+cpAvailableArray[5][5]+"<br/>  Rating: "+cpAvailableArray[5][8]+"/5</p></span>";
+    document.getElementById("carpark6-btn").innerHTML="<span>   Car Park "+ cpAvailableArray[6][0]+"<br/><p>Distance: "+ cpAvailableArray[6][6]+"km<br/>   Travel Time: "+(cpAvailableArray[6][7]).toFixed(2)+"min<br/>  Available Slots: "+cpAvailableArray[6][3]+"<br/>  Booked: "+cpAvailableArray[6][5]+"<br/>  Rating: "+cpAvailableArray[6][8]+"/5</p></span>";
     //document.getElementById("carpark1-btn").onclick=navigate(cpAvailableArray[1][1], cpAvailableArray[1][2]);
     
 
