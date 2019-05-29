@@ -381,7 +381,7 @@ p {
   padding-top : 5px;
   padding-bottom: 0px;
   width: 210px;
-  height:130px;
+  height:150px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 1px;
@@ -400,7 +400,7 @@ p {
   content: '\00bb';
   position: absolute;
   opacity: 0;
-  top:25px;
+  top:35px;
   right: -20px;
   transition: 0.5s;
   font-size: 50px;
