@@ -1,6 +1,8 @@
 <html>
 <head>
 <title>Control Panel</title>
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+		<link rel="icon" href="../assets/graphics/app-icon-transparent.png">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="../assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -102,7 +104,7 @@ if ($result = $mysqli->query($query)) {
     <form class="" method="post" action="" name="carParks">
 			
             <div class="input-group input-group-submit">
-                <input type="submit" name="submit" value="Cancel Booking" id="btn_submit" onclick=""/>
+                <--input type="submit" name="submit" value="Cancel Booking" id="btn_submit" onclick=""/>
                 <label for="btn_submit"></label>
             </div>
         
