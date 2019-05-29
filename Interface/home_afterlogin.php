@@ -123,7 +123,6 @@ if (isset($_GET['q'])){
 							<ul class="features">
 								<li class="icon fa-heart-o">
 								<h2>Test Review</h2>
-		
 									<span class="fa fa-star checked"></span>
 									<span class="fa fa-star checked"></span>
 									<span class="fa fa-star checked"></span>
