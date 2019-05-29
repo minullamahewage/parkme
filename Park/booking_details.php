@@ -1,6 +1,8 @@
 <html>
 <head>
-<title>Control Panel</title>
+<title>Booking Details</title>
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+		<link rel="icon" href="../assets/graphics/app-icon-transparent.png">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="../assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
