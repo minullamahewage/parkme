@@ -27,6 +27,7 @@ session_start();
 require_once '../Park/class.carpark.php';
 $park = new CarPark();
 
+
 $uemail = $_SESSION['uemail'];
 echo $uemail;
 
