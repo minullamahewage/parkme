@@ -1,5 +1,5 @@
 <?php
-include "../Config/db_config.php";
+include "db_config.php";
 
 	class CarPark{
 
@@ -17,12 +17,12 @@ include "../Config/db_config.php";
 		/*** for registration process ***/
 		public function reg_carPark($parkName,$longitude,$latitude,$totalSlots){
 			 
-			if (is_numeric($longitude)==False or is_numeric($latitude)==False or floor((float)$latitude)==(float)$latitude or floor((float)$longitude)==(float)$longitude){
+			if (is_numeric($longitude)==False OR is_numeric($latitude)==False OR ((int)$longitude<0) OR ((int)$latitude<0) OR floor((float)$latitude)==(float)$latitude or floor((float)$longitude)==(float)$longitude){
 				echo '<script language="javascript">';
 				echo 'alert("Latitude & Longitude can only be Floating Point Numbers!!")';
 				echo '</script>';
 				
-			}else if(is_numeric($totalSlots)==False or filter_var($totalSlots,FILTER_VALIDATE_INT)==False){
+			}else if(is_numeric($totalSlots)==False OR ((int)$totalSlots<0) OR filter_var($totalSlots,FILTER_VALIDATE_INT)==False){
 				echo '<script language="javascript">';
 				echo 'alert("The Number of Slots must be an Integer Number!!")';
 				echo '</script>';
