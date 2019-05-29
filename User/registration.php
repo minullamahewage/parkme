@@ -159,7 +159,7 @@
 					<a href="login.php">Already registered! Click Here!</a>
 					</td>
 					<div class="row">
-						<a href="privacy.html" target="_blank">
+						<a href="../Interface/privacy.html" target="_blank">
 							<p id="privacy">Terms and Conditions/Privacy Policies</p>
 
 
