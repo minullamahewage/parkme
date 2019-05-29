@@ -1,5 +1,5 @@
 <?php
-include "db_config.php";
+include "../Config/db_config.php";
 
 	class CarPark{
 
