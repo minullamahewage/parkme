@@ -32,6 +32,8 @@ echo '<table class="gridtable" border="0" cellspacing="2" cellpadding="2">
           <td> <font face="Arial">Available slots</font> </td> 
           <td> <font face="Arial">Total slots</font> </td> 
           <td> <font face="Arial">Booked slots</font> </td> 
+          <td> <font face="Arial">User Rating</font> </td> 
+          <td> <font face="Arial">Number of Navigations</font> </td> 
       </tr>';
  
 if ($result = $mysqli->query($query)) {
@@ -43,6 +45,9 @@ if ($result = $mysqli->query($query)) {
         $field5name = $row["cpavailable"]; 
         $field6name = $row["cptotal"]; 
         $field7name = $row["cpbooked"]; 
+        $field8name = $row["rates"]; 
+        $field9name = $row["user_count"]; 
+        $field10name = $row["rating"]; 
  
         echo '
             <
@@ -54,6 +59,8 @@ if ($result = $mysqli->query($query)) {
                   <td>'.$field5name.'</td> 
                   <td>'.$field6name.'</td> 
                   <td>'.$field7name.'</td> 
+                  <td>'.$field10name.'</td> 
+                  <td>'.$field9name.'</td> 
               </tr>';
     }
     $result->free();

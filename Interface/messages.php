@@ -165,6 +165,7 @@ if ($result = $mysqli->query($query)) {
                     </div>
 					<div class="input-group input-group-submit">
 						<input type="submit" name="submit" value="Submit" id="btn_submit" onclick="off();"/>
+                        
 						<label for="btn_submit"></label>
 					</div>
 					</div>

@@ -128,7 +128,7 @@ if ($result = $mysqli->query($query)) {
     <button onclick="on();">Rate the Park</button>
     
 
-<div id = "overlay" >     
+<div id = "overlay">     
 <form class="" method="post" action="" name="rating">   
 <select name="rates">
   <option value="1">1</option>
@@ -137,9 +137,11 @@ if ($result = $mysqli->query($query)) {
   <option value="3">4</option>
   <option value="3">5</option>
 </select>
+
 <input type="submit" name="rating" value="Rate" id="btn_submit" onclick=""/>
+<button onclick="off();">Cancel</button>
 </form>
-<div onclick = "off();"></div>
+
         </div>
  
 
