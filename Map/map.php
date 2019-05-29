@@ -53,7 +53,7 @@
         ${"carpark".$i}=new CarPark();
         ${"carpark".$i}->return_location($i);
         //echo $i;
-        $cparray[$i]= array($i,${"carpark".$i}->cplat,${"carpark".$i}->cplng, ${"carpark".$i}->cpavailable, ${"carpark".$i}->cptotal, ${"carpark".$i}->cpbooked );
+        $cparray[$i]= array($i,${"carpark".$i}->cplat,${"carpark".$i}->cplng, ${"carpark".$i}->cpavailable, ${"carpark".$i}->cptotal, ${"carpark".$i}->cpbooked, ${"carpark".$i}->rating );
         
     }
     //encoding php array for use with js
@@ -101,7 +101,7 @@
                 //getDistancesList(cparray[1]);
                 //console.log(cparray[0][1]);
                 //console.log("cpid: "+ cparray[0][0]+ "cplat: "+ cparray[0][1]+ "cplng: "+ cparray[0][2]);
-                console.log("cpid: "+ cparray[1][0]+ ", cplat: "+ cparray[1][1]+ ", cplng: "+ cparray[1][2]+ ", cpavailable: "+ cparray[1][3]);
+                console.log("cpid: "+ cparray[1][0]+ ", cplat: "+ cparray[1][1]+ ", cplng: "+ cparray[1][2]+ ", cpavailable: "+ cparray[1][3]+ ", rating: "+ cparray[1][5]);
                 console.log("cpid: "+ cparray[2][0]+ ", cplat: "+ cparray[2][1]+ ", cplng: "+ cparray[2][2]);
                 console.log("cpid: "+ cparray[3][0]+ ", cplat: "+ cparray[3][1]+ ", cplng: "+ cparray[3][2]);
                 console.log("cpid: "+ cparray[4][0]+ ", cplat: "+ cparray[4][1]+ ", cplng: "+ cparray[4][2]);
@@ -133,12 +133,12 @@
                 
             </div>
             <div style="position: absolute; top:40px; left:800px; width:600px; height:600px">
-            <button class="btn-carpark disabled" id="carpark1-btn" onclick="navigateData(cpAvailableArray[1][0], cpAvailableArray[1][1], cpAvailableArray[1][2])"><span>Car Park 1<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
-            <button class="btn-carpark disabled" id="carpark2-btn" onclick="navigateData(cpAvailableArray[2][0], cpAvailableArray[2][1], cpAvailableArray[2][2])"><span>Car Park 2<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
-            <button class="btn-carpark disabled" id="carpark3-btn" onclick="navigateData(cpAvailableArray[3][0], cpAvailableArray[3][1], cpAvailableArray[3][2])"><span>Car Park 3<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
-            <button class="btn-carpark disabled" id="carpark4-btn" onclick="navigateData(cpAvailableArray[4][0], cpAvailableArray[4][1], cpAvailableArray[4][2])"><span>Car Park 4<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
-            <button class="btn-carpark disabled" id="carpark5-btn" onclick="navigateData(cpAvailableArray[5][0], cpAvailableArray[5][1], cpAvailableArray[5][2])"><span>Car Park 5<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
-            <button class="btn-carpark disabled" id="carpark6-btn" onclick="navigateData(cpAvailableArray[6][0], cpAvailableArray[6][1], cpAvailableArray[6][2])"><span>Car Park 6<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA</p></span></button>
+            <button class="btn-carpark disabled" id="carpark1-btn" onclick="navigateData(cpAvailableArray[1][0], cpAvailableArray[1][1], cpAvailableArray[1][2])"><span>Car Park 1<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA<br/>   Rating: NA</p></span></button>
+            <button class="btn-carpark disabled" id="carpark2-btn" onclick="navigateData(cpAvailableArray[2][0], cpAvailableArray[2][1], cpAvailableArray[2][2])"><span>Car Park 2<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA<br/>   Rating: NA</p></span></button>
+            <button class="btn-carpark disabled" id="carpark3-btn" onclick="navigateData(cpAvailableArray[3][0], cpAvailableArray[3][1], cpAvailableArray[3][2])"><span>Car Park 3<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA<br/>   Rating: NA</p></span></button>
+            <button class="btn-carpark disabled" id="carpark4-btn" onclick="navigateData(cpAvailableArray[4][0], cpAvailableArray[4][1], cpAvailableArray[4][2])"><span>Car Park 4<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA<br/>   Rating: NA</p></span></button>
+            <button class="btn-carpark disabled" id="carpark5-btn" onclick="navigateData(cpAvailableArray[5][0], cpAvailableArray[5][1], cpAvailableArray[5][2])"><span>Car Park 5<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA<br/>   Rating: NA</p></span></button>
+            <button class="btn-carpark disabled" id="carpark6-btn" onclick="navigateData(cpAvailableArray[6][0], cpAvailableArray[6][1], cpAvailableArray[6][2])"><span>Car Park 6<br/><p> Distance: NA<br/>   Travel Time: NA<br/>   Available Slots: NA<br/>   Booked: NA<br/>   Rating: NA</p></span></button>
             </div>
 
             <div id = "parkDetails">
