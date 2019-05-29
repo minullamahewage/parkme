@@ -1,6 +1,10 @@
 <html>
 <head>
+<<<<<<< HEAD
+<title>Control Panel</title>
+=======
 <title>Booking Details</title>
+>>>>>>> 6088cf360c74d914b18e73f3a9e4050f1ff1a882
 <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 		<link rel="icon" href="../assets/graphics/app-icon-transparent.png">
 	<meta charset="UTF-8">

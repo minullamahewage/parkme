@@ -14,7 +14,7 @@
 </head>
 <div class="btn-group">
  
-                    <img src="../assets/graphics/codewizards.png" alt="login-logo" class="app-logo">
+                    <img src="../assets/graphics/codewizards_w.png" alt="login-logo" class="app-logo">
     <button onclick="window.open('../Interface/home_afterlogin.php')">Go to Home</button>
     <button class="btn-group btn-register" onclick="window.open('../Park/ParkRegistration.php')">Register a new Car Park</button>
     <button  name="update" value="Update database"  onclick = "on() ">Update database</button>
