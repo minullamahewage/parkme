@@ -77,6 +77,20 @@
 	
 
 }
+function showpassr(obj){
+
+var obj = document.getElementById('passwordr');
+obj.type = "text";
+  
+
+}
+	  function hidepassr(obj){
+
+var obj = document.getElementById('passwordr');
+obj.type = "password";
+  
+
+}
 	</script>
 
 	<div class="container">
@@ -113,9 +127,9 @@
 					</div>
 				</div>
 				<div class="input-group input-group-icon">
-					<input type="password" placeholder="Confirm Password" id="password" name='upassconfirm'/>
+					<input type="password" placeholder="Confirm Password" id="passwordr" name='upassconfirm'/>
 					<div>
-							<span onmousedown = "showpass()" onmouseup = "hidepass()"toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" ></span>
+							<span onmousedown = "showpassr()" onmouseup = "hidepassr()"toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" ></span>
 						</div>
 					<div class="input-icon"><i class="fa fa-key"></i>
 					</div>
