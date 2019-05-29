@@ -350,8 +350,8 @@ p {
 
 .btn-ghost:link,
 .btn-ghost:visited {
-    border: 1px solid #d35400;
-    color: #d35400;
+    border: 1.5px solid #b14600;
+    color: #fff;
 }
 
 .btn:hover,

@@ -9,7 +9,7 @@
 
 	<link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 	<link rel="icon" href="../assets/graphics/app-icon-transparent.png">
-
+	<link rel="stylesheet" href="../assets/css/login-style.css">
 	<link rel="stylesheet" href="../assets/css/style.css">
 
 	<?php
