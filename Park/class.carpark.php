@@ -13,8 +13,7 @@ include "../Config/db_config.php";
 		public $rating;
 		public function __construct(){
 
-			if ($this->db == null){
-			$this->db = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);}
+			$this->db = DBConnection::getDBConnection();
 
 			if(mysqli_connect_errno()) {
 				echo "Error: Could not connect to database.";

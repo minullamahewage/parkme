@@ -23,6 +23,7 @@
 <?php 
 session_start();
 include 'class.carpark.php';
+//include "../Config/db_config.php";
 
 $park = new CarPark();
 $id = $_SESSION['id'];
@@ -31,10 +32,7 @@ echo $id;
 echo "Welcome $name";
 
 
-
-
-
-$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE); 
+$mysqli =  DBConnection::getDBConnection();
 if(mysqli_connect_errno()) {
     echo "Error: Could not connect to database.";
         exit;

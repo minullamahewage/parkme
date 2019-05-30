@@ -1,12 +1,12 @@
 <?php
-include "db_config.php";
+include "../Config/db_config.php";
 
 	class CarPark{
 
 		public $db;
 
 		public function __construct(){
-			$this->db = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+			$this->db = DBConnection::getDBConnection();
 
 			if(mysqli_connect_errno()) {
 				echo "Error: Could not connect to database.";
