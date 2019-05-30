@@ -132,6 +132,7 @@
   <div style="width: 640px; height: 780px" id="mapContainer"></div>
   <script src="map.js" type="text/javascript"></script>
       <div class="map-text-box">
+      <a class="btn btn-full" href="../Interface/home_afterlogin.php" id="get-location-btn" >Home </a>
                 <a class="btn btn-full" href="#" id="get-location-btn" onclick="getLocation()">Get Location </a> 
                 <a class="btn btn-ghost disabled"  href="#" id="carkpark-info" onclick="updateCarParks()">Carpark Info</a>
                 
