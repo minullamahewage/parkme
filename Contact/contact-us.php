@@ -56,7 +56,7 @@ if(isset($_POST['submit'])){
 	<link rel="icon" href="../assets/graphics/app-icon-transparent.png">
 </head>
 <div class="container">  
-  <form id="contact" action="contact-us.php" method="post">
+  <form id="contact" action="contact-us.php" method="post" >
     <h3>Contact Form</h3>
     <h4><?= $result; ?></h4>
     <fieldset>

@@ -101,11 +101,12 @@ if (isset($_GET['q'])){
 					<section id="two" class="wrapper alt style2">
 				
 						<section class="spotlight">
-							<div class="image"><img src="../assets/graphics/pic02.jpg" alt="" /></div><div class="content">
+							<div class="image"><img src="../assets/graphics/pic02.jpg" alt="" /></div>
+							<div class="content">
 								<h2>Find nearby <br />
 								Car Parks</h2>
 								<p>Navigate to your nearest car park</p>
-								<ul class="actions special">
+								<ul class="actions special" >
 								<li><a href="../Map/map.php"  class="button primary">Find Car Parks</a></li>
 							</ul>
 							</div>
