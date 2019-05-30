@@ -2175,11 +2175,13 @@ input, select, textarea {
 			-moz-justify-content: center;
 			-webkit-justify-content: center;
 			-ms-justify-content: center;
-			justify-content: left;
+			justify-content: center;
 			width: 100%;
 			margin-left: 0;
 		}
-
+#ula{
+	justify-content: left;
+}
 			ul.actions.special li:first-child {
 				padding-left: 0;
 			}
