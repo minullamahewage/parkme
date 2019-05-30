@@ -87,7 +87,7 @@ if (isset($_GET['q'])){
 						<div class="inner" >
 							<header class="major">
 								<h2>Parking made easy</h2>
-								<p>Find your best option for every journey</p>
+								<p>Find your nearest car park</p>
 							</header>
 							<ul class="icons major">
 								<li><span class="icon fa-car major style1"><span class="label">Lorem</span></span></li>

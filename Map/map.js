@@ -26,6 +26,7 @@ var platform = new H.service.Platform({
     var cpmarker4 = new H.map.Marker({ lat: 6.79585, lng: 79.8883 }, { icon: icon });
     var cpmarker5 = new H.map.Marker({ lat: 6.91175, lng: 79.8514 }, { icon: icon });
     var cpmarker6 = new H.map.Marker({ lat: 6.89066, lng: 79.9066 }, { icon: icon });
+    var cpmarker7 = new H.map.Marker({ lat: 6.77438, lng: 79.8823 }, { icon: icon });
 
     // Add the marker to the map:
     map.addObject(cpmarker1);
@@ -34,6 +35,7 @@ var platform = new H.service.Platform({
     map.addObject(cpmarker4);
     map.addObject(cpmarker5);
     map.addObject(cpmarker6);
+    map.addObject(cpmarker7);
 
       
       
@@ -48,10 +50,10 @@ var cparrayglobal;
 var testValue=0;
 //array 0 - cpid, 1 - distance, 2 - travel time, 3- cplat, 4 - cplng
 cpInfoArray = new Array();
-cpno=7;
+cpno=8;
 //Initialise carpark info array
 for(i=0;i<cpno;i++){
-    cpInfoArray[i]=new Array(i,0,0,0,0,0,0,0);
+    cpInfoArray[i]=new Array(i,0,0,0,0,0,0,0,0);
 }
 
 
@@ -126,7 +128,7 @@ function navigate(cplat,cplng){
 //Add all carpark distance and travel data to carpark info array
 function getDistancesList(cparray){
     //console.log(cpDistanceArray[3][1]);
-    for (index = 1; index < 7; index++) {
+    for (index = 1; index < 8; index++) {
             cparrayglobal=cparray;    
             cp=cparray[index];
                 cp_var=cp;
@@ -163,7 +165,7 @@ function updateCarParkButtons(){
         cpAvailableArray[j]=new Array(0,0,0,0,0,0,0,0);
     }
     cpaan=1;
-    for(var k=1;k<cpno; k++){
+    for(var k=1;k<7; k++){
         
         console.log(cpInfoArray[k][3]);
         if(cpInfoArray[k][3]!==0){
@@ -173,7 +175,7 @@ function updateCarParkButtons(){
             cpaan++;
         }
     }
-    for(var k=1;k<cpno; k++){
+    for(var k=1;k<7; k++){
         if(cpInfoArray[k][3]==0){
             cpAvailableArray[cpaan]=cpInfoArray[k];
             document.getElementById("carpark"+ cpaan +"-btn").className="btn-carpark disabled";

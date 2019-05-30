@@ -57,7 +57,7 @@
 						  <h2>Park Me</h2>
 							<p>The smart parking app<br />
 							for your need<br />
-					      <strong>park me</strong></p>
+					      <strong></strong></p>
 							<ul class="actions special">
 								<li><a href="User/login.php" class="button primary">Login</a></li>
 							</ul>
