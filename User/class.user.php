@@ -15,10 +15,10 @@ include "../Config/db_config.php";
 		}
 
 		/*** for registration process ***/
-		public function reg_user($ufname,$uemail,$upass,$udob,$ugender){
+		public function reg_user($ufname,$ulname,$uemail,$upass,$udob,$ugender){
 
 			$upass = md5($upass);
-			$sql="SELECT * FROM users WHERE ufname='$ufname' OR uemail='$uemail'";
+			$sql="SELECT * FROM users WHERE uemail='$uemail'";
 
 			//checking if the username or email is available in db
 			$check =  $this->db->query($sql) ;
@@ -26,7 +26,7 @@ include "../Config/db_config.php";
 
 			//if the username is not in db then insert to the table
 			if ($count_row == 0){
-				$sql1="INSERT INTO users SET ufname='$ufname', upass='$upass', uemail='$uemail', udob='$udob', ugender='$ugender'";
+				$sql1="INSERT INTO users SET ufname='$ufname', ulname='$ulname', upass='$upass', uemail='$uemail', udob='$udob', ugender='$ugender'";
 				$result = mysqli_query($this->db,$sql1) or die(mysqli_connect_errno()."Data cannot inserted");
         		return $result;
 			}

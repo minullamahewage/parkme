@@ -49,8 +49,10 @@
 
     
     //retreive data from the database into an array
+    //no. of car parks
+    $cpno=8;
     $cparray= array();
-    for ($i=0; $i<7; $i++){
+    for ($i=0; $i<$cpno; $i++){
         ${"carpark".$i}=new CarPark();
         ${"carpark".$i}->return_location($i);
         //echo $i;
@@ -108,6 +110,7 @@
                 console.log("cpid: "+ cparray[4][0]+ ", cplat: "+ cparray[4][1]+ ", cplng: "+ cparray[4][2]);
                 console.log("cpid: "+ cparray[5][0]+ ", cplat: "+ cparray[5][1]+ ", cplng: "+ cparray[5][2]);
                 console.log("cpid: "+ cparray[6][0]+ ", cplat: "+ cparray[6][1]+ ", cplng: "+ cparray[6][2]);
+                console.log("cpid: "+ cparray[7][0]+ ", cplat: "+ cparray[7][1]+ ", cplng: "+ cparray[7][2]);
                 getDistancesList(cparray);
                 
             }
@@ -125,7 +128,7 @@
         }
     </script>
   </head>
-  <body>
+  <body><div>
   <div style="width: 640px; height: 780px" id="mapContainer"></div>
   <script src="map.js" type="text/javascript"></script>
       <div class="map-text-box">
@@ -162,9 +165,9 @@
             </div>
 
             <div id="overlay" onclick = "off()">
- <button  id = "navbtn" class="btn-carpark" onclick="navigateFuncB()" type = "submit" name = "submit">Reserve and Start Navigation</button>
+ <button  id = "navbtn" class="btn-carpark" onclick="navigateFuncB()" type = "submit" name = "submit" style="position: fixed;top: 10%;left: 41.5%;">Reserve and Start Navigation</button>
   
-  <button id = "navbtn" class="btn-carpark" onclick="navigateFunc()" type = "submit" name = "submit">Start Navigation</button>
+  <button id = "navbtn" class="btn-carpark" onclick="navigateFunc()" type = "submit" name = "submit"style="position: fixed;top: 25%;left: 41.5%;">Start Navigation</button>
 </div>
       </form>
 
@@ -172,7 +175,7 @@
 <div id = "overlayButton">
         <button id = "navbtn" class = "btn-carpark" onclick = "offButton()">Cancel Booking</button>
 
-</div>
+</div></div>
 <script>
 var cp = {};
 

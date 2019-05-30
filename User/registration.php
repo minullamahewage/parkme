@@ -22,14 +22,14 @@
 			
 				//echo "You have selected :" . $_REQUEST['udob']; //  Displaying Selected Value
 			
-			$register = $user->reg_user($ufname, $uemail,$upass, $udob, $ugender);
+			$register = $user->reg_user($ufname,$ulname,$uemail,$upass, $udob, $ugender);
 			if ($register) {
 			// Registration Success
 			//echo 'Registration successful <a href="login.php">Click here</a> to login';
 				header("location:../User/login.php");
 			} else {
 			// Registration Failed
-				$message = "Registration failed. Email or Username already exist please try again.\\nTry again.";
+				$message = "Registration failed. Email already exist please try again.\\nTry again.";
 				echo "<script type='text/javascript'>alert('$message');</script>";
 
 			}
@@ -142,7 +142,7 @@ obj.type = "password";
 					<div class="input-group">
 
 						<div class="col-third">
-							<input type="date"  name="udob" id = "date"/>
+							<input type="date"  name="udob" id = "date" max="2005-05-30" min="1900-01-01"/>
 						</div>
 					</div>
 				</div>
