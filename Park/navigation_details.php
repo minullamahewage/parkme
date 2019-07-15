@@ -23,9 +23,7 @@
 <?php 
 
 session_start();
-if ($_SESSION['uemail'] == null){
-    header("location:../User/login.php");
-  }
+
 include 'class.carpark.php';
 //include "../Config/db_config.php";
 

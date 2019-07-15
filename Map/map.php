@@ -16,9 +16,7 @@
 
   <?php
   session_start();
-  if ($_SESSION['uemail'] == null){
-    header("location:../User/login.php");
-  }
+
     require '../Park/class.carpark.php';
     
     $park = new CarPark();

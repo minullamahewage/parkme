@@ -1,8 +1,5 @@
 <?php
 
-if ($_SESSION['uemail'] == null){
-  header("location:../User/login.php");
-}
 
 $result = "";
 require 'class.mail.php';

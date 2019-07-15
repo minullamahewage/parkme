@@ -14,9 +14,7 @@
 	<script type="text/javascript" src="user.js"></script>
 
 	<?php
-	if ($_SESSION['uemail'] == null){
-		header("location:../User/login.php");
-	  }
+
 	require 'class.parkReg.php';
 	$carPark = new CarPark(); // Checking for user logged in or not
 	if ( $_SERVER[ 'REQUEST_METHOD' ] === 'POST' ) {
