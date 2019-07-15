@@ -1,5 +1,9 @@
 <?php
 
+if ($_SESSION['uemail'] == null){
+  header("location:../User/login.php");
+}
+
 $result = "";
 require 'class.mail.php';
 $mail_db = new Mail();
@@ -40,6 +44,8 @@ if(isset($_POST['submit'])){
     }else{
         $result="Thank you ".$_POST['name']." for contacting us.We'll get back to you soon!";   
     }*/
+
+    
 }
 
 ?>

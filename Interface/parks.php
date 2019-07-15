@@ -12,6 +12,9 @@
 </head>
 <body>
 <?php 
+if ($_SESSION['uemail'] == null){
+    header("location:../User/login.php");
+  }
 require '../Park/class.carpark.php';
 $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE); 
 if(mysqli_connect_errno()) {
